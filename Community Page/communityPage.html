@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Buying | Fruits Bulk Ordering Mumbai - Kimaye</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        background-color: #edede8;
+      }
+
+      header {
+        display: flex;
+
+        background-color: #437111;
+        color: white;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+      }
+      header > p {
+        background-color: #437111;
+      }
+
+      .box1 > ul {
+        display: inline-flex;
+        justify-content: flex-start;
+        list-style: none;
+      }
+      .box1 > ul li {
+        margin: 15px;
+      }
+
+      .box1 > ul > li:hover a {
+        color: #98cb4d;
+      }
+      .sub-menu {
+        display: none;
+        z-index: 1;
+      }
+      .box1 > ul li:hover .sub-menu {
+        display: block;
+        position: absolute;
+        background-color: white;
+      }
+      .box1 > ul li:hover .sub-menu ul {
+        list-style-type: none;
+        background-color: white;
+        display: block;
+      }
+      .box1 > ul li:hover .sub-menu ul li {
+        width: 150px;
+        background-color: white;
+        text-align: left;
+      }
+      .sub-menu ul li:hover {
+        transform: scale(0.9);
+
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+      .box2 {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box1 {
+        width: 33%;
+        gap: 10px;
+        align-items: center;
+        list-style-type: none;
+        padding-left: 25px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+      .box3 {
+        width: 33%;
+        justify-content: flex-end;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        padding-right: 30px;
+        font-size: 1.2rem;
+      }
+      .box2 > img {
+        width: 50%;
+      }
+
+      nav {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        background-color: #eeeeea;
+      }
+      .firstimg {
+        width: 100%;
+      }
+      .second_div {
+        width: 90%;
+        justify-content: center;
+        margin: auto;
+        display: flex;
+        line-height: 25px;
+        margin-top: 55px;
+        position: relative;
+      }
+      .second_div_first {
+        width: 50%;
+        margin: auto;
+        margin-right: 15px;
+        position: relative;
+        padding-right: 20px;
+      }
+      .second_div_first:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        border-right: 1px solid black;
+        top: 0%;
+        bottom: -20%;
+      }
+      .second_div_second {
+        width: 50%;
+        margin: auto;
+        margin-left: 15px;
+      }
+      .second_div_second > input {
+        width: 100%;
+        border: 0px;
+      }
+      .para1 {
+        margin-top: 150px;
+        font-size: 19px;
+        justify-content: center;
+      }
+      .para2 {
+        margin-top: 30px;
+        font-size: 19px;
+        justify-content: center;
+      }
+      .para3 {
+        margin-top: 30px;
+        font-size: 19px;
+        justify-content: center;
+      }
+      .para4 {
+        margin-top: 30px;
+        font-size: 19px;
+        justify-content: center;
+      }
+      .h1first {
+        margin-top: 40px;
+      }
+      .h2first {
+        font-size: 25px;
+        margin-top: 30px;
+        font-weight: 800;
+      }
+      .para4 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 19px;
+      }
+      .input1 {
+        font-size: 22px;
+        margin-top: 45px;
+        margin-bottom: 10px;
+      }
+      .input2 {
+        font-size: 22px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+      .input3 {
+        font-size: 22px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+      .input4 {
+        font-size: 22px;
+        margin-top: 25px;
+        margin-bottom: 40px;
+      }
+      .submit {
+        margin-top: 40px;
+        font-size: 24px;
+        color: white;
+        background-color: red;
+        border-radius: 4rem;
+        padding: 15px 60px;
+        border: 0px;
+      }
+      footer {
+        margin-top: 120px;
+      }
+
+      footer > div {
+        display: flex;
+        /* width: 90%; */
+        justify-content: space-between;
+        padding: 0 30px;
+        background-color: #7d9c5b;
+        color: black;
+        padding-top: 50px;
+        margin-top: 20px;
+      }
+      footer > div {
+        border-bottom: 1px solid grey;
+        padding-bottom: 10px;
+        padding: 30px 80px;
+      }
+      footer > div > div {
+        background-color: #7d9c5b;
+      }
+      footer > div > div > p {
+        background-color: #7d9c5b;
+      }
+
+      .copyright {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        background-color: #7d9c5b;
+        padding: 20px 80px;
+      }
+      .copyright > img {
+        width: 100px;
+        margin: auto;
+        margin-right: 10px;
+        background-color: #7d9c5b;
+      }
+      .copyright > p {
+        background-color: #7d9c5b;
+      }
+      .social_icon > img {
+        background-color: #7d9c5b;
+      }
+      #box2 > div > h3 {
+        background-color: #7d9c5b;
+      }
+      .social_icon {
+        background-color: #7d9c5b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p>Delivering in Mumbai and Delhi | Same Day Delivery</p>
+    </header>
+    <nav>
+      <div class="navbar">
+        <div class="box1">
+          <ul>
+            <li>
+              shop
+              <div class="sub-menu">
+                <ul>
+                  <li>ALL FRUITS</li>
+                  <li>FRESH CUTS</li>
+                  <li>FRUIT COMBOS</li>
+                  <li>GIFT BY KIMAYE</li>
+                  <li>RETURN AND REPLACEMENT</li>
+                  <li>COMMUNITY BUYING</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              learn
+              <div class="sub-menu">
+                <ul>
+                  <li>OUR STORY</li>
+                  <li>WHY KIMAYE</li>
+                  <li>TRACEABILITY</li>
+                  <li>BEYOND FRUITS</li>
+                </ul>
+              </div>
+            </li>
+            <li>GROW</li>
+          </ul>
+        </div>
+        <div class="box2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+            alt=""
+          />
+        </div>
+        <div class="box3">
+          <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+          <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div><a href="#"></a><i class="fa-solid fa-user"></i></div>
+          <div><a href=""></a><i class="fa-solid fa-cart-arrow-down"></i></div>
+        </div>
+      </div>
+    </nav>
+    <img
+      class="firstimg"
+      src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Community-Buying_3112.jpg?v=1609401474"
+      alt="Error"
+    />
+    <div class="second_div">
+      <div class="second_div_first">
+        <p class="para1">
+          We understand the power of community and want to pass on the benefits
+          to you.
+        </p>
+        <p class="para2">
+          To achieve this, we are now catering to community orders from your
+          society. With our community buying option, not only will you get
+          access to our assorted selection of fruits at a better price, you also
+          get to share the joy with your neighbors and co-residents of your
+          society.
+        </p>
+        <p class="para3">
+          All you need to do is fill out the enquiry form and we will get in
+          touch with you. We will take your individual orders and deliver them
+          to your society at a specified date and time every week.
+        </p>
+        <h1 class="h1first">Kimaye is #allSafe#allGood</h1>
+      </div>
+      <div class="second_div_second">
+        <h2 class="h2first">WANT US TO VISIT YOUR SOCIETY?</h2>
+        <p class="para4">
+          Please fill the form below and we will reach out to you
+        </p>
+        <input class="input1" type="text" placeholder="Name" />
+        <hr />
+        <input class="input2" type="text" placeholder="Contact Number" />
+        <hr />
+        <input class="input3" type="text" placeholder="Email" />
+        <hr />
+        <input
+          class="input4"
+          type="text"
+          placeholder="Name and address of your society"
+        />
+        <hr />
+        <button class="submit">Submit</button>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <div class="box">
+          <p>FAQ'S</p>
+          <p>Contact Us</p>
+          <p>shipping & return policy</p>
+          <p>terms and condition</p>
+          <p>privacy policy</p>
+        </div>
+
+        <div id="box2">
+          <div>
+            <h3>Follow us on</h3>
+            <div class="social_icon">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                alt="facebook"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                alt="instagram"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                alt="twitter"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright">
+      <p>copyright2020 All rights reserved</p>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
