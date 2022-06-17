@@ -170,7 +170,7 @@
             gap: 30px 20px;
         }
 
-        #main>div>img {
+        #main>div>a>img {
             width: 100%;
             border-radius: 20px;
             transition: 0.3s;
@@ -423,25 +423,29 @@
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7790_540x.jpg?v=1631346990",
         name: "Fruit Box By Kimaye (Strength)",
         price: 1800,
-        qty:1
+        qty:1,
+        link:"particular1.html"
     },
     {
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_540x.jpg?v=1631347621",
         name: "Fruit Box By Kimaye (Adore)",
         price: 2000,
-        qty:1
+        qty:1,
+        link:"particular2.html"
     },
     {
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
         name: "Fruit Box By Kimaye (Cherish)",
         price: 1400,
-        qty:1
+        qty:1,
+        link:"particular3.html"
     },
     {
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
         name: "Fruit Box By Kimaye (Seasonal)",
         price: 1200,
-        qty:1
+        qty:1,
+        link:"particular4.html"
     }
     ];
     let newCart = JSON.parse(localStorage.getItem("displayCart")) || [];
@@ -451,6 +455,8 @@
     function gettingItems(itemObj) {
         itemObj.forEach(function (el) {
             let box = document.createElement("div")
+            let a=document.createElement("a")
+            a.setAttribute("href",el.link)
             let cont1 = document.createElement("img")
             cont1.setAttribute("src", el.image);
             cont1.addEventListener("click",function(){
@@ -474,7 +480,8 @@
             cont6.innerText = "Add to Cart"
             cont3.append(cont5)
             cont4.append(cont6)
-            box.append(cont1, cont2, cont3, cont4);
+            a.append(cont1)
+            box.append(a, cont2, cont3, cont4);
             document.querySelector("#main").append(box)
         })
 

@@ -490,10 +490,7 @@
             <h1><i class="fa fa-inr"></i>1,800</h1>
             <div id="cart">
                 <!-- append cart and increment decrement here -->
-                <button>-</button>
-                <input id="no" type="text">
-                <button>+</button>
-                <button id="cartadding">Add to Cart</button>
+               
             </div>
             <p>Storage Instructions:</p>
             <ul>
@@ -585,8 +582,7 @@
             price: "₹ 1,200"
         },
     ]
-    let toCart = JSON.parse(localStorage.getItem("insidefruit")) || [];
-
+    let toCart = JSON.parse(localStorage.getItem("insidefruit"))||[]
 
     getItem(imageObj);
 
@@ -603,6 +599,57 @@
             box.append(cont1, cont2, cont3)
             document.querySelector("#insidesec").append(box)
         })
+    }
+
+    gettocart(toCart);
+
+    function gettocart(toCart){
+        toCart.forEach(function(el){
+            let col1=document.createElement("button")
+            col1.innerText="+"
+            col1.addEventListener("click",function(){
+                add(el)
+            })
+            let col2=document.createElement("button")
+            col1.innerText="-"
+            col1.addEventListener("click",function(){
+                substract(el)
+            })
+            let col3=document.createElement("p")
+            col3.innerText=el.qty
+            let col4=document.createElement("button")
+            col4.innerText="Add to Cart"
+            col4.addEventListener("click",function(){
+                push(el)
+            })
+            document.querySelector("#cart").append(col1,col3,col2,col4)
+        })
+    }
+
+    function add(el) {
+        toCart.forEach(function (elem) {
+            if (elem == el) {
+                elem.qty++;
+                console.log(elem.qty)
+                localStorage.setItem("insidefruit", JSON.stringify(toCart))
+                // window.location.reload();
+            }
+        })
+    }
+    function substract(el) {
+        toCart.forEach(function (elem) {
+            if (elem == el) {
+                elem.qty--;
+                console.log(elem.qty)
+                localStorage.setItem("insidefruit", JSON.stringify(toCart))
+                // window.location.reload();
+            }
+        })
+    }
+
+    function push(el){
+        localStorage.setItem("insidefruit", JSON.stringify(toCart))
+
     }
 
     let im = document.getElementById("im");

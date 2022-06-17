@@ -505,9 +505,10 @@
 </html>
 <script>
     let datafromproduct = JSON.parse(localStorage.getItem("displayCart")) || [];
+    let toCart = JSON.parse(localStorage.getItem("insidefruit"))||[]
+
 
     display(datafromproduct);
-    // let count= localStorage.getItem("quantity")||"1";
 
     function display(datafromproduct) {
         document.querySelector("tbody").innerHTML = "";
