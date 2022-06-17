@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            background-color: #ecece7;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #header {
+            width: 100%;
+            height: 50px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #437111;
+            color: white;
+            font-weight: bold;
+        }
+
+        .box1>ul {
+            display: inline-flex;
+            justify-content: flex-start;
+            list-style: none;
+        }
+
+        .box1>ul li {
+            margin: 15px;
+        }
+
+        .box1>ul>li:hover a {
+            color: #98cb4d
+        }
+
+        .sub-menu {
+            display: none;
+            z-index: 1;
+
+        }
+
+        .box1>ul li:hover .sub-menu {
+            display: block;
+            position: absolute;
+            background-color: white;
+
+        }
+
+        .box1>ul li:hover .sub-menu ul {
+            list-style-type: none;
+            background-color: white;
+            display: block;
+
+
+        }
+
+        .box1>ul li:hover .sub-menu ul li {
+            width: 150px;
+            background-color: white;
+            text-align: left;
+        }
+
+        .sub-menu ul li:hover {
+            transform: scale(0.90);
+
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .navbar {
+
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .box2 {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box1 {
+            width: 33%;
+            gap: 10px;
+            align-items: center;
+            list-style-type: none;
+            padding-left: 25px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px
+        }
+
+        .box3 {
+
+            width: 33%;
+            justify-content: flex-end;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            padding-right: 30px;
+            font-size: 1.2rem;
+
+        }
+
+        .box2>img {
+            width: 50%;
+        }
+
+        nav {
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            background-color: #eeeeea;
+        }
+/* ------------------------------------------------------------------middle------------------------------------------------------- */
+        #heading {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            color: white;
+            background-color: #437111;
+        }
+
+        #heading>h1 {
+            text-transform: uppercase;
+            padding-top: 20px;
+        }
+
+        h1+p>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #heading>p {
+            padding-bottom: 20px;
+        }
+        #table{
+            width: 70%;
+            height: auto;
+            margin: auto;
+        }
+        td{
+            width: 300px;
+            text-align: center;
+        }
+        #info{
+            width: 30%;
+            height: auto;
+            margin: auto;
+            text-align: center;
+        }
+        #info>input{
+            width: 70%;
+            height: 40px;
+            border: none;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        #cartinfo{
+            width: 70%;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            background-color: white;
+        }
+        #cartinfo>div{
+            width: 48%;
+            /* margin: auto; */
+        }
+        #cartinfo>div:first-child{
+            text-align: center;
+        }
+        #cartinfo>div:first-child>input{
+            width: 90%;
+            height: 100px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border: none;
+        }
+        #cartinfo>div:last-child{
+            margin-left: 2%;
+            text-align: center;
+        }
+        h1+div{
+            text-align: left;
+        }
+        h1+div+div{
+            width: 100%;
+            height: 30px;
+            background-color: red;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-align: left;
+        }
+        #cartinfo>div:last-child>button{
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            height: 50px;
+            font-size: 18px;
+            background-color: #98cb4d;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+        }
+        tbody>tr>td>div>img{
+            width: 50%;
+        }
+        tbody>tr>td{
+            border: 1px solid black;
+        }
+        tbody>tr>td>div{
+            display: flex;
+        }
+        td:nth-child(3)>div{
+            width: 25%;
+            border: 1px solid black;
+            margin: auto;
+        }
+        td:nth-child(3)>div>button{
+            height: 20%;
+        }
+        td:nth-child(3)>div>p{
+
+        }
+        td:nth-child(3)>div>input{
+            width: 10%;
+        }
+        tbody>tr>td:first-child>div>button{
+            border-radius: 50%;
+            height: 50%;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        /* ------------------------------------------------------------footer------------------------------------------------------ */
+        footer {
+            background-color: #7d9c5b;
+            padding: 70px 0;
+            margin-top: 100px;
+        }
+
+        #big {
+            width: 75%;
+            margin: auto;
+        }
+
+        .footer_col>ul {
+            list-style: none;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer_col {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .footer_col ul li a:hover {
+            color: red;
+        }
+
+        #socialMedia>a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin: 0 10px 10px 0;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+        #socialMedia{
+            margin-right: 200px;
+        }
+        i {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">Delivering in Mumbai and Delhi | Same day delivery!</div>
+    <nav>
+        <div class="navbar">
+            <div class="box1">
+                <ul>
+                    <li>shop
+                        <div class="sub-menu">
+                            <ul>
+                                <li>ALL FRUITS</li>
+                                <li>FRESH CUTS</li>
+                                <li>FRUIT COMBOS</li>
+                                <li>GIFT BY KIMAYE</li>
+                                <li>RETURN AND REPLACEMENT</li>
+                                <li>COMMUNITY BUYING</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>learn
+                        <div class="sub-menu">
+                            <ul>
+                                <li>OUR STORY</li>
+                                <li>WHY KIMAYE</li>
+                                <li>TRACEABILITY</li>
+                                <li>BEYOND FRUITS</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>GROW</li>
+                </ul>
+            </div>
+            <div class="box2">
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+                    alt="" />
+            </div>
+            <div class="box3">
+                <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+                <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div><a href="#"></a><i class="fa-solid fa-user"></i></div>
+                <div><a href=""></a><i class="fa-solid fa-cart-arrow-down"></i></div>
+            </div>
+        </div>
+    </nav>
+    <div id="heading">
+        <h1>Cart</h1>
+        <p><a href=""><i class="fa fa-home"></i>Home /</a> Cart</p>
+    </div>
+    <div id="table">
+        <table>
+            <thead>
+                <tr>
+                    <td>PRODUCT</td>
+                    <td>PRICE</td>
+                    <td>QUANTITY</td>
+                    <td>TOTAL</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- append data here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="info">
+        <p>Pick a Delivery date:</p>
+        <input type="date">
+        <p>Choose a time:</p>
+        <input type="time">
+        <h3>Your current delivery location is Mumbai</h3>
+    </div>
+    <div id="cartinfo">
+        <div>
+            <h2>SPECIAL INSTRUCTIONS</h2>
+            <input type="text">
+        </div>
+        <div>
+            <h2>CART TOTALS</h2>
+            <div>
+                <p>Subtotal:</p><p  id="subtotal"></p><hr>
+                <h2>TOTAL</h2><p id="total"></p>
+            </div>
+            <div>congratulations you've got free shipping!</div>
+            <button>proceed to checkout</button>
+            <button>continue shopping</button>
+        </div>
+    </div>
+    <footer>
+        <div id="big">
+            <div id="container">
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">FAQ's</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Shipping & Return policy</a></li>
+                        <li><a href="">Terms & Conditions</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">Follow us on</a></li>
+                        <div id="socialMedia">
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                                    alt=""></a>
+
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    let datafromproduct = JSON.parse(localStorage.getItem("displayCart")) || [];
+
+    display(datafromproduct);
+    // let count= localStorage.getItem("quantity")||"1";
+
+    function display(datafromproduct){
+        document.querySelector("tbody").innerHTML="";
+        datafromproduct.forEach(function(el,index){
+            let row=document.createElement("tr")
+            let col1=document.createElement("td")
+            let box=document.createElement("div")
+            let in0=document.createElement("button")
+            in0.innerText="X"
+            in0.addEventListener("click",function(){
+                del(index)
+            })
+            let img=document.createElement("img")
+            img.setAttribute("src",el.image)
+            let nam=document.createElement("p")
+            nam.innerText=el.name
+            let col2=document.createElement("td")
+            col2.innerText=el.price
+            let col3=document.createElement("td")
+            let box2=document.createElement("div")
+            let in1=document.createElement("button")
+            in1.innerText="-"
+            in1.addEventListener("click",function(){
+                substract(el)
+            })
+            let in2=document.createElement("p")
+            in2.innerText=el.qty;
+            let in3=document.createElement("button")
+            in3.innerText="+"
+            in3.addEventListener("click",function(){
+                add(el);
+            })
+            let col4=document.createElement("td")
+            col4.innerText=el.price*el.qty;
+            box.append(in0,img,nam)
+            col1.append(box)
+            box2.append(in1,in2,in3)
+            col3.append(box2)
+            row.append(col1,col2,col3,col4)
+            document.querySelector("tbody").append(row);            
+        })
+    }
+
+    function add(el){
+        datafromproduct.forEach(function(elem){
+            if(elem==el){
+                elem.qty++;
+                // display(datafromproduct);
+                localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
+                window.location.reload();
+            }
+        })
+    }
+    function substract(el){
+        datafromproduct.forEach(function(elem){
+            if(elem==el){
+                elem.qty--;
+                // display(datafromproduct);
+                localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
+                window.location.reload();
+            }
+        })
+    }
+    function del(index){
+        datafromproduct.splice(index,1);
+        localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
+        window.location.reload();
+    }
+    display(datafromproduct);
+
+    let bag=0;
+    for(let i=0;i<datafromproduct.length;i++){
+        bag=bag+datafromproduct[i].price*datafromproduct[i].qty
+        
+    }
+    document.querySelector("#subtotal").innerText=bag;
+    document.querySelector("#total").innerText=bag;
+
+
+    
+
+</script>

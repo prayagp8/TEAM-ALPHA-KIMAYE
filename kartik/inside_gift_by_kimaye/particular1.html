@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #header {
+            width: 100%;
+            height: 50px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #437111;
+            color: white;
+            font-weight: bold;
+        }
+
+        .box1>ul {
+            display: inline-flex;
+            justify-content: flex-start;
+            list-style: none;
+        }
+
+        .box1>ul li {
+            margin: 15px;
+        }
+
+        .box1>ul>li:hover a {
+            color: #98cb4d
+        }
+
+        .sub-menu {
+            display: none;
+            z-index: 1;
+
+        }
+
+        .box1>ul li:hover .sub-menu {
+            display: block;
+            position: absolute;
+            background-color: white;
+
+        }
+
+        .box1>ul li:hover .sub-menu ul {
+            list-style-type: none;
+            background-color: white;
+            display: block;
+
+
+        }
+
+        .box1>ul li:hover .sub-menu ul li {
+            width: 150px;
+            background-color: white;
+            text-align: left;
+        }
+
+        .sub-menu ul li:hover {
+            transform: scale(0.90);
+
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .navbar {
+
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .box2 {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box1 {
+            width: 33%;
+            gap: 10px;
+            align-items: center;
+            list-style-type: none;
+            padding-left: 25px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px
+        }
+
+        .box3 {
+
+            width: 33%;
+            justify-content: flex-end;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            padding-right: 30px;
+            font-size: 1.2rem;
+
+        }
+
+        .box2>img {
+            width: 50%;
+        }
+
+        nav {
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            background-color: #eeeeea;
+        }
+
+        #back {
+            width: 75%;
+            display: flex;
+            margin: auto;
+            justify-content: space-between;
+        }
+
+        #home {
+            display: flex;
+            align-items: center;
+        }
+
+        #home>p {
+            font-size: 12px;
+            color: gray;
+            margin-left: 10px;
+        }
+
+        #home>a {
+            font-weight: lighter;
+            font-size: 13px;
+        }
+
+        body {
+            background-color: #ecece7;
+        }
+
+        #main {
+            width: 75%;
+            margin: auto;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0px;
+        }
+
+        #main>div {
+            width: 49%;
+        }
+
+        #im {
+            width: 90%;
+            margin-left: 0px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #pic {
+            max-width: 100%;
+            min-width: 100%;
+            transform: translate(0%, 0%);
+            pointer-events: none;
+        }
+
+        #display {
+            width: 50%;
+            display: flex;
+        }
+
+        #display>img {
+            width: 35%;
+            margin-left: 10px;
+            margin-top: -10px;
+        }
+
+        #display>img:first-child {
+            margin-left: 0px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        p+ul>li {
+            font-size: 20px;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        footer {
+            background-color: #7d9c5b;
+            padding: 70px 0;
+            margin-top: 50px;
+        }
+
+        #big {
+            width: 70%;
+            margin: auto;
+        }
+
+        .footer_col>ul {
+            list-style: none;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer_col {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .footer_col ul li a:hover {
+            color: red;
+        }
+
+        #socialMedia>a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin: 0 10px 10px 0;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+
+        #socialMedia {
+            margin-right: 200px;
+        }
+
+        i {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #second {
+            width: 100%;
+            height: 800px;
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/yellow_bg.png?v=1600179877");
+            border: 1px solid #ecece7;
+        }
+
+        #insidesec {
+            width: 70%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, auto);
+            gap: 20px;
+            text-align: center;
+        }
+
+        #second>h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 100px;
+        }
+
+        #second>h1 {
+            font-family: 'Acme', sans-serif;
+        }
+
+        #insidesec img {
+            width: 100%;
+            height: 350px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.7s;
+
+        }
+
+        #insidesec img:hover {
+            transform: scale(1.07);
+
+        }
+
+        #insidesec p+p {
+            color: red;
+            font-weight: bold;
+        }
+
+        #insidesec img+p {
+            cursor: pointer;
+        }
+
+        #gift+h1 {
+            text-align: left;
+            color: red;
+            font-size: 50px;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 20px;
+        }
+
+        button+button {
+            margin-left: 10px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .rating {
+            width: 10%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .rating+div {
+            width: 80%;
+            display: flex;
+            margin: auto;
+            justify-content: space-between;
+        }
+
+        .rating+div>button:first-child {
+            border: none;
+        }
+
+        .rating>i+p {
+            font-size: 13px;
+        }
+
+        #gift {
+            width: 20%;
+            display: flex;
+        }
+
+        #gift>img {
+            border-radius: 50%;
+            width: 50%;
+        }
+
+        #cart+p+ul>li {
+            font-size: 15px;
+        }
+
+        #display>img:nth-child(2) {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">Delivering in Mumbai and Delhi | Same day delivery!</div>
+    <nav>
+        <div class="navbar">
+            <div class="box1">
+                <ul>
+                    <li>shop
+                        <div class="sub-menu">
+                            <ul>
+                                <li>ALL FRUITS</li>
+                                <li>FRESH CUTS</li>
+                                <li>FRUIT COMBOS</li>
+                                <li>GIFT BY KIMAYE</li>
+                                <li>RETURN AND REPLACEMENT</li>
+                                <li>COMMUNITY BUYING</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>learn
+                        <div class="sub-menu">
+                            <ul>
+                                <li>OUR STORY</li>
+                                <li>WHY KIMAYE</li>
+                                <li>TRACEABILITY</li>
+                                <li>BEYOND FRUITS</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>GROW</li>
+                </ul>
+            </div>
+            <div class="box2">
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+                    alt="" />
+            </div>
+            <div class="box3">
+                <div><a href=""><i class="fa-solid fa-location-dot"></i></a></div>
+                <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div><a href="#"></a><i class="fa-solid fa-user"></i></div>
+                <div><a href=""></a><i class="fa-solid fa-cart-arrow-down"></i></div>
+            </div>
+        </div>
+    </nav>
+    <div id="back">
+        <div id="home">
+            <a href=""><i class="fa fa-home"></i>Home / Gifts by kimaye /</a>
+            <p> Fruit Box by Kimaye (Strength)</p>
+        </div>
+        <div>
+            <a href="particular4.html"><i class="fa-solid fa-arrow-left-long"></i></a>
+            <a href="particular2.html"><i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="one">
+            <figure id="im">
+                <img id="pic"
+                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7793.progressive.jpg?v=1631346990"
+                    alt="">
+            </figure>
+            <div id="display">
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_219x.progressive.jpg?v=1631347621"
+                    alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7793_219x.progressive.jpg?v=1631346990"
+                    alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A6078_219x.progressive.jpg?v=1631347044"
+                    alt="">
+            </div>
+        </div>
+        <div id="two">
+            <h1>Fruit Box by Kimaye (Strength)</h1>
+            <i class="fa fa-star"></i></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                class="fa fa-star"></i><i class="fa fa-star"></i>
+            <p>A Fruit box curated specially for you and your loved ones to embrace the strength of the bonds .This
+                Fruit Gift Box by Kimaye consists of the following fruits</p>
+            <ul>
+                <li>4 pcs of Green Kiwi (0.4 kg)</li>
+                <li>4 pcs of Washington Apples (0.7 ~0.8kg)</li>
+                <li>4 pcs of Pomegranates (1 kg)</li>
+                <li>4 pcs of Pomegranates (1 kg)</li>
+                <li>1 punnet of Red Globe Grapes (400 g)</li>
+            </ul>
+            <p> <b> Packaging: Kappa Cardboard Box (Beige)</b></p>
+            <p> <b>Gift Instructions</b> </p>
+            <ul>
+                <li>Add recipient/sender name in "Gift Instructions" in cart.</li>
+                <li>Invoice for gifts will be only e-mailed to sender.</li>
+                <li>Delivery partner will coordinate on the contact number given in shipping information.</li>
+            </ul>
+            <p> <b>Bulk Buying:</b> In case you wish to purchase more than 5 Gift Boxes, please WhatsApp us on
+                8291273262 to avail special offers.</p>
+            <h2><i class="fa fa-inr"></i>1,800</h2>
+            <div id="gift">
+                <p>Packs:</p>
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7812_118x.progressive.jpg?v=1631347707"
+                    alt="">
+            </div>
+            <h1><i class="fa fa-inr"></i>1,800</h1>
+            <div id="cart">
+                <!-- append cart and increment decrement here -->
+                <button>-</button>
+                <input id="no" type="text">
+                <button>+</button>
+                <button id="cartadding">Add to Cart</button>
+            </div>
+            <p>Storage Instructions:</p>
+            <ul>
+                <li>Store Pomegranates in ambient conditions and consume within 3 days of delivery.</li>
+                <li>Store Apples & Oranges in refrigerated condition and consume within 5 days of delivery.</li>
+                <li>Store Dragon Fruit in refrigerated conditions and consume within 3-4 days of delivery.</li>
+                <li>Store USA Northwest Cherries in refrigerated conditions and consume within 4-5 days of delivery .
+                </li>
+                <li>Store Blueberries in refrigerated condition and consume within 4 days of delivery.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="second">
+        <h1>related products</h1>
+        <div id="insidesec"></div>
+    </div>
+    <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+            class="fa fa-star"></i>
+    </div>
+    <div>
+        <button>Reviews 0</button>
+        <button><i class="fa-solid fa-message"></i> Write a Review</button>
+    </div>
+    <hr>
+    <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+            class="fa fa-star"></i>
+        <p>Be the first to review this item</p>
+    </div>
+
+    <footer>
+        <div id="big">
+            <div id="container">
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">FAQ's</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Shipping & Return policy</a></li>
+                        <li><a href="">Terms & Conditions</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">Follow us on</a></li>
+                        <div id="socialMedia">
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                                    alt=""></a>
+
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    let imageObj = [
+        {
+            image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_540x.jpg?v=1631347621",
+            name: "Fruit Box by Kimaye (Adore)",
+            price: "₹ 2,000-₹ 2,100"
+        },
+        {
+            image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
+            name: "Fruit Box by Kimaye (Cherish)",
+            price: "₹ 1,400"
+        },
+        {
+            image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
+            name: "Fruit Box by Kimaye (Seasonal)",
+            price: "₹ 1,200"
+        },
+    ]
+    let toCart = JSON.parse(localStorage.getItem("insidefruit")) || [];
+
+
+    getItem(imageObj);
+
+    function getItem(imageObj) {
+        imageObj.forEach(function (el) {
+            let box = document.createElement("div");
+            let box1 = document.createElement("div");
+            let cont1 = document.createElement("img");
+            cont1.setAttribute("src", el.image)
+            let cont2 = document.createElement("p")
+            cont2.innerText = el.name;
+            let cont3 = document.createElement("p")
+            cont3.innerText = el.price;
+            box.append(cont1, cont2, cont3)
+            document.querySelector("#insidesec").append(box)
+        })
+    }
+
+    let im = document.getElementById("im");
+    let pic = document.getElementById("pic");
+
+    one.addEventListener("mousemove", function (event) {
+        clientX = event.clientX - im.offsetLeft
+        clientY = event.clientY - pic.offsetTop
+
+        mWidth = one.offsetWidth
+        mHeight = one.offsetHeight
+
+        clientX = clientX / mWidth * 100
+        clientY = clientY / mHeight * 100
+        pic.style.transform = 'translate(-' + clientX + '%,-' + clientY + '%) scale(2)';
+
+
+        one.addEventListener("mouseleave", function (event) {
+            pic.style.transform = 'translate(0%,0%) scale(1)'
+        })
+
+
+    })
+
+
+</script>
