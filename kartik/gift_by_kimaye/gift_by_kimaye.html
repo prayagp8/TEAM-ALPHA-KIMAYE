@@ -205,12 +205,10 @@
             border-radius: 0 0 20px 20px;
             position: absolute;
             left: 0px;
-            bottom: -500px;
+            bottom: 60px;
             opacity: 0;
             cursor: pointer;
             transition: 0.3s ease;
-
-
         }
 
         #main>div:hover button {
@@ -229,67 +227,88 @@
             color: gray;
         }
 
-        footer {
-            background-color: #7d9c5b;
-            padding: 70px 0;
-            margin-top: 50px;
-        }
-
-        #big {
-            width: 70%;
-            margin: auto;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        #container {
+        footer>div {
             display: flex;
-            flex-wrap: wrap;
+            /* width: 90%; */
             justify-content: space-between;
+            padding: 0 30px;
+            background-color: #7d9c5b;
+            color: black;
+            padding-top: 50px;
+            margin-top: 20px;
         }
 
-        .footer_col {
-            font-size: 15px;
-            font-weight: bold;
+        footer>div {
+            border-bottom: 1px solid grey;
+            padding-bottom: 10px;
+            padding: 30px 80px;
+
+
         }
 
-        .footer_col ul li a:hover {
-            color: red;
+        footer>div>div {
+            background-color: #7d9c5b;
         }
 
-        #socialMedia>a {
-            display: inline-block;
-            height: 40px;
-            width: 40px;
-            background-color: black;
-            color: white;
-            text-align: center;
-            margin: 0 10px 10px 0;
-            line-height: 40px;
-            border-radius: 50%;
+        footer>div>div>p {
+            background-color: #7d9c5b;
         }
-        #socialMedia{
-            margin-right: 200px;
+
+        .copyright {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
+            background-color: #7d9c5b;
+            padding: 20px 80px;
+
+
         }
-        hr {
-            width: 72%;
+
+        .copyright>img {
+            width: 100px;
             margin: auto;
-            margin-top: 50px;
-            color: gray;
+            margin-right: 10px;
+            background-color: #7d9c5b;
+
+
         }
 
-        .links>p:last-child>a {
-            text-decoration: underline;
+        .copyright>p {
+            background-color: #7d9c5b;
         }
 
-        .links>p>a:hover {
-            text-decoration: underline;
+        .social_icon>img {
+            background-color: #7d9c5b;
+        }
+        #box2>div>h3 {
+            background-color: #7d9c5b;
+        }
+        .social_icon {
+            background-color: #7d9c5b;
+        }
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: black;
+            cursor: pointer;
         }
 
-        i {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+            transform-origin: bottom right;
+            transition: transform 0.2s ease-out;
+        }
+
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
     </style>
 </head>
@@ -398,6 +417,10 @@
         </div>
         <hr>
     </footer>
+    <div class="copyright">
+        <p>copyright2020 All rights reserved</p>
+        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040" alt="" />
+    </div>
 
 
 </body>
