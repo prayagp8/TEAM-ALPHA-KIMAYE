@@ -10,6 +10,7 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
         body {
             background-color: #ecece7;
             font-family: 'Poppins', sans-serif;
@@ -123,7 +124,8 @@
             z-index: 1;
             background-color: #eeeeea;
         }
-/* ------------------------------------------------------------------middle------------------------------------------------------- */
+
+        /* ------------------------------------------------------------------middle------------------------------------------------------- */
         #heading {
             width: 100%;
             height: auto;
@@ -145,34 +147,40 @@
         #heading>p {
             padding-bottom: 20px;
         }
-        #table{
+
+        #table {
             width: 70%;
             height: auto;
             margin: auto;
         }
-        td{
+
+        td {
             width: 300px;
             text-align: center;
         }
-        #info{
+
+        #info {
             width: 30%;
             height: auto;
             margin: auto;
             text-align: center;
         }
-        #info>input{
+
+        #info>input {
             width: 70%;
             height: 40px;
             border: none;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         }
-        #info>select{
+
+        #info>select {
             width: 70%;
             height: 40px;
             border: none;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         }
-        #cartinfo{
+
+        #cartinfo {
             width: 70%;
             height: 450px;
             margin: auto;
@@ -180,28 +188,33 @@
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             background-color: white;
         }
-        #cartinfo>div{
+
+        #cartinfo>div {
             width: 48%;
             /* margin: auto; */
         }
-        #cartinfo>div:first-child{
+
+        #cartinfo>div:first-child {
             text-align: center;
         }
-        #cartinfo>div:first-child>input{
+
+        #cartinfo>div:first-child>input {
             width: 90%;
             height: 100px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             border: none;
         }
-        #cartinfo>div:last-child{
+
+        #cartinfo>div:last-child {
             margin-left: 2%;
             text-align: center;
         }
-        
-        h1+div{
+
+        h1+div {
             text-align: left;
         }
-        hr+div+div{
+
+        hr+div+div {
             width: 100%;
             height: 30px;
             background-color: red;
@@ -210,7 +223,8 @@
             border-radius: 5px;
             text-align: left;
         }
-        #cartinfo>div:last-child>button{
+
+        #cartinfo>div:last-child>button {
             cursor: pointer;
             display: block;
             width: 100%;
@@ -222,136 +236,132 @@
             text-transform: uppercase;
             border: none;
         }
-        #sub{
+
+        #sub {
             display: flex;
             justify-content: space-between;
         }
-        #sub+hr+div{
+
+        #sub+hr+div {
             display: flex;
             justify-content: space-between;
         }
-        #sub+hr+div>p{
+
+        #sub+hr+div>p {
             font-weight: bold;
             font-size: 25px;
         }
-        tbody>tr>td>div>img{
+
+        tbody>tr>td>div>img {
             width: 50%;
         }
-        tbody>tr>td>div{
+
+        tbody>tr>td>div {
             display: flex;
         }
-        td:nth-child(3)>div{
+
+        td:nth-child(3)>div {
             width: 25%;
             margin: auto;
         }
-        td:nth-child(3)>div>button{
+
+        td:nth-child(3)>div>button {
             height: 20%;
         }
-        td:nth-child(3)>div>p{
-           margin-top: 0px;
-           background-color: white;
-           padding: 0px 10px;
+
+        td:nth-child(3)>div>p {
+            margin-top: 0px;
+            background-color: white;
+            padding: 0px 10px;
         }
-        td:nth-child(3)>div>input{
+
+        td:nth-child(3)>div>input {
             width: 10%;
         }
-        tbody>tr>td:first-child>div>button{
+
+        tbody>tr>td:first-child>div>button {
             border-radius: 50%;
             height: 50%;
             background-color: black;
             color: white;
             cursor: pointer;
         }
+
         /* ------------------------------------------------------------footer------------------------------------------------------ */
-        footer>div {
+        footer {
+            background-color: #7d9c5b;
+            padding: 70px 0;
+            margin-top: 50px;
+        }
+
+        #big {
+            width: 80%;
+            margin: auto;
+            margin-top: -50px;
+        }
+
+        .footer_col>ul {
+            list-style: none;
+        }
+
+        #container {
             display: flex;
-            /* width: 90%; */
+            flex-wrap: wrap;
             justify-content: space-between;
-            padding: 0 30px;
-            background-color: #7d9c5b;
+        }
+
+        .footer_col {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .footer_col ul li a:hover {
+            color: red;
+        }
+
+        #socialMedia>a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin: 0 10px 10px 0;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+
+        #socialMedia {
+            margin-right: 200px;
+        }
+
+        i {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        a {
+            text-decoration: none;
             color: black;
-            padding-top: 50px;
-            margin-top: 20px;
-        }
-
-        footer>div {
-            border-bottom: 1px solid grey;
-            padding-bottom: 10px;
-            padding: 30px 80px;
-
-
-        }
-
-        footer>div>div {
-            background-color: #7d9c5b;
-        }
-
-        footer>div>div>p {
-            background-color: #7d9c5b;
+            font-weight: 600;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .copyright {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
             justify-content: space-between;
-            background-color: #7d9c5b;
-            padding: 20px 80px;
-
-
         }
 
         .copyright>img {
-            width: 100px;
-            margin: auto;
-            margin-right: 10px;
-            background-color: #7d9c5b;
-
-
+            width: 10%;
+            height: 10%;
+            margin-top: 15px;
         }
 
         .copyright>p {
-            background-color: #7d9c5b;
+            font-weight: lighter;
         }
-
-        .social_icon>img {
-            background-color: #7d9c5b;
-        }
-
-        #box2>div>h3 {
-            background-color: #7d9c5b;
-
-        }
-
-        .social_icon {
-            background-color: #7d9c5b;
-
-
-        }
-
-
-        .hover-underline-animation {
-            display: inline-block;
-            position: relative;
-            color: black;
-            cursor: pointer;
-        }
-
-        .hover-underline-animation:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: black;
-            transform-origin: bottom right;
-            transition: transform 0.2s ease-out;
-        }
-
-        .hover-underline-animation:hover:after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
+        hr{
+           opacity: 0.3;
         }
     </style>
 </head>
@@ -439,8 +449,9 @@
             <h2>CART TOTALS</h2>
             <div id="sub">
                 <p>Subtotal:</p>
-                <p  id="subtotal"></p>
-            </div><hr>
+                <p id="subtotal"></p>
+            </div>
+            <hr>
             <div>
                 <h2>TOTAL</h2>
                 <p id="total"></p>
@@ -451,34 +462,43 @@
         </div>
     </div>
     <footer>
-        <div>
-            <div class="box">
-                <p>FAQ'S</p>
-                <p>Contact Us</p>
-                <p>shipping & return policy</p>
-                <p>terms and condition</p>
-                <p>privacy policy</p>
-            </div>
-
-            <div id="box2">
-                <div>
-                    <h3>Follow us on</h3>
-                    <div class="social_icon">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
-                            alt="facebook" />
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
-                            alt="instagram" />
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
-                            alt="twitter" />
-                    </div>
+        <div id="big">
+            <div id="container">
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">FAQ's</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Shipping & Return policy</a></li>
+                        <li><a href="">Terms & Conditions</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
                 </div>
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">Follow us on</a></li>
+                        <div id="socialMedia">
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                                    alt=""></a>
+
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                <p>copyright&copy;2020 All rights reserved</p>
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040" alt="" />
             </div>
         </div>
     </footer>
-    <div class="copyright">
-        <p>copyright2020 All rights reserved</p>
-        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040" alt="" />
-    </div>
+
 
 </body>
 
@@ -489,85 +509,85 @@
     display(datafromproduct);
     // let count= localStorage.getItem("quantity")||"1";
 
-    function display(datafromproduct){
-        document.querySelector("tbody").innerHTML="";
-        datafromproduct.forEach(function(el,index){
-            let row=document.createElement("tr")
-            let col1=document.createElement("td")
-            let box=document.createElement("div")
-            let in0=document.createElement("button")
-            in0.innerText="X"
-            in0.style.marginTop="15%";
-            in0.addEventListener("click",function(){
+    function display(datafromproduct) {
+        document.querySelector("tbody").innerHTML = "";
+        datafromproduct.forEach(function (el, index) {
+            let row = document.createElement("tr")
+            let col1 = document.createElement("td")
+            let box = document.createElement("div")
+            let in0 = document.createElement("button")
+            in0.innerText = "X"
+            in0.style.marginTop = "15%";
+            in0.addEventListener("click", function () {
                 del(index)
             })
-            let img=document.createElement("img")
-            img.setAttribute("src",el.image)
-            let nam=document.createElement("p")
-            nam.innerText=el.name
-            let col2=document.createElement("td")
-            col2.innerText="₹"+el.price
-            let col3=document.createElement("td")
-            let box2=document.createElement("div")
-            let in1=document.createElement("button")
-            in1.innerText="-"
-            in1.addEventListener("click",function(){
+            let img = document.createElement("img")
+            img.setAttribute("src", el.image)
+            let nam = document.createElement("p")
+            nam.innerText = el.name
+            let col2 = document.createElement("td")
+            col2.innerText = "₹" + el.price
+            let col3 = document.createElement("td")
+            let box2 = document.createElement("div")
+            let in1 = document.createElement("button")
+            in1.innerText = "-"
+            in1.addEventListener("click", function () {
                 substract(el)
             })
-            let in2=document.createElement("p")
-            in2.innerText=el.qty;
-            let in3=document.createElement("button")
-            in3.innerText="+"
-            in3.addEventListener("click",function(){
+            let in2 = document.createElement("p")
+            in2.innerText = el.qty;
+            let in3 = document.createElement("button")
+            in3.innerText = "+"
+            in3.addEventListener("click", function () {
                 add(el);
             })
-            let col4=document.createElement("td")
-            col4.innerText="₹"+el.price*el.qty;
-            box.append(in0,img,nam)
+            let col4 = document.createElement("td")
+            col4.innerText = "₹" + el.price * el.qty;
+            box.append(in0, img, nam)
             col1.append(box)
-            box2.append(in1,in2,in3)
+            box2.append(in1, in2, in3)
             col3.append(box2)
-            row.append(col1,col2,col3,col4)
-            document.querySelector("tbody").append(row);            
+            row.append(col1, col2, col3, col4)
+            document.querySelector("tbody").append(row);
         })
     }
 
-    function add(el){
-        datafromproduct.forEach(function(elem){
-            if(elem==el){
+    function add(el) {
+        datafromproduct.forEach(function (elem) {
+            if (elem == el) {
                 elem.qty++;
                 // display(datafromproduct);
-                localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
+                localStorage.setItem("displayCart", JSON.stringify(datafromproduct))
                 window.location.reload();
             }
         })
     }
-    function substract(el){
-        datafromproduct.forEach(function(elem){
-            if(elem==el){
+    function substract(el) {
+        datafromproduct.forEach(function (elem) {
+            if (elem == el) {
                 elem.qty--;
                 // display(datafromproduct);
-                localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
+                localStorage.setItem("displayCart", JSON.stringify(datafromproduct))
                 window.location.reload();
             }
         })
     }
-    function del(index){
-        datafromproduct.splice(index,1);
-        localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
+    function del(index) {
+        datafromproduct.splice(index, 1);
+        localStorage.setItem("displayCart", JSON.stringify(datafromproduct))
         window.location.reload();
     }
     display(datafromproduct);
 
-    let bag=0;
-    for(let i=0;i<datafromproduct.length;i++){
-        bag=bag+datafromproduct[i].price*datafromproduct[i].qty
-        
+    let bag = 0;
+    for (let i = 0; i < datafromproduct.length; i++) {
+        bag = bag + datafromproduct[i].price * datafromproduct[i].qty
+
     }
-    document.querySelector("#subtotal").innerText="₹"+bag;
-    document.querySelector("#total").innerText="₹"+bag;
+    document.querySelector("#subtotal").innerText = "₹" + bag;
+    document.querySelector("#total").innerText = "₹" + bag;
 
 
-    
+
 
 </script>

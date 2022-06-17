@@ -206,98 +206,81 @@
         h2 {
             color: green;
         }
+        /* --------------------------------------------------------footer-start----------------------------------------------------- */
+        footer {
+            background-color: #7d9c5b;
+            padding: 70px 0;
+            margin-top: 100px;
+        }
 
-        footer>div {
+        #big {
+            width: 80%;
+            margin: auto;
+            margin-top: -50px;
+        }
+
+        .footer_col>ul {
+            list-style: none;
+        }
+
+        #container {
             display: flex;
-            /* width: 90%; */
+            flex-wrap: wrap;
             justify-content: space-between;
-            padding: 0 30px;
-            background-color: #7d9c5b;
+        }
+
+        .footer_col {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .footer_col ul li a:hover {
+            color: red;
+        }
+
+        #socialMedia>a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin: 0 10px 10px 0;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+        #socialMedia{
+            margin-right: 200px;
+        }
+        i {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
             color: black;
-            padding-top: 50px;
-            margin-top: 20px;
+            font-weight: 600;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
         }
-
-        footer>div {
-            border-bottom: 1px solid grey;
-            padding-bottom: 10px;
-            padding: 30px 80px;
-
-
-        }
-
-        footer>div>div {
-            background-color: #7d9c5b;
-        }
-
-        footer>div>div>p {
-            background-color: #7d9c5b;
-        }
-
         .copyright {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
             justify-content: space-between;
-            background-color: #7d9c5b;
-            padding: 20px 80px;
-
-
         }
 
         .copyright>img {
-            width: 100px;
-            margin: auto;
-            margin-right: 10px;
-            background-color: #7d9c5b;
-
-
+            width: 10%;
+            height: 10%;
+            margin-top: 15px;
         }
 
         .copyright>p {
-            background-color: #7d9c5b;
+            font-weight: lighter;
         }
-
-        .social_icon>img {
-            background-color: #7d9c5b;
+        hr{
+           opacity: 0.3;
         }
-
-        #box2>div>h3 {
-            background-color: #7d9c5b;
-
-        }
-
-        .social_icon {
-            background-color: #7d9c5b;
-
-
-        }
-
-
-        .hover-underline-animation {
-            display: inline-block;
-            position: relative;
-            color: black;
-            cursor: pointer;
-        }
-
-        .hover-underline-animation:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: black;
-            transform-origin: bottom right;
-            transition: transform 0.2s ease-out;
-        }
-
-        .hover-underline-animation:hover:after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
+        /* ---------------------------------------------------footer-end-------------------------------------------------------------- */
         #second {
             width: 100%;
             height: 800px;
@@ -543,34 +526,43 @@
     </div>
 
     <footer>
-        <div>
-            <div class="box">
-                <p>FAQ'S</p>
-                <p>Contact Us</p>
-                <p>shipping & return policy</p>
-                <p>terms and condition</p>
-                <p>privacy policy</p>
-            </div>
-
-            <div id="box2">
-                <div>
-                    <h3>Follow us on</h3>
-                    <div class="social_icon">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
-                            alt="facebook" />
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
-                            alt="instagram" />
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
-                            alt="twitter" />
-                    </div>
+        <div id="big">
+            <div id="container">
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">FAQ's</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Shipping & Return policy</a></li>
+                        <li><a href="">Terms & Conditions</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
                 </div>
+                <div class="footer_col">
+                    <ul>
+                        <li><a href="">Follow us on</a></li>
+                        <div id="socialMedia">
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                                    alt=""></a>
+
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                <p>copyright2020 All rights reserved</p>
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040" alt="" />
             </div>
         </div>
     </footer>
-    <div class="copyright">
-        <p>copyright2020 All rights reserved</p>
-        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040" alt="" />
-    </div>
+    
 
 </body>
 
