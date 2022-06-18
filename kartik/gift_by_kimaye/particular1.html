@@ -206,6 +206,10 @@
         h2 {
             color: green;
         }
+        #quantity{
+            background-color: white;
+            padding: 0px 10px;
+        }
         /* --------------------------------------------------------footer-start----------------------------------------------------- */
         footer {
             background-color: #7d9c5b;
@@ -611,29 +615,33 @@
                 add(el)
             })
             let col2=document.createElement("button")
-            col1.innerText="-"
-            col1.addEventListener("click",function(){
+            col2.innerText="-"
+            col2.addEventListener("click",function(){
+                if(el.qty<=1){
+                    return false;
+                }
                 substract(el)
             })
             let col3=document.createElement("p")
             col3.innerText=el.qty
+            col3.setAttribute("id","quantity")
+            col3.style.display="inline";
             let col4=document.createElement("button")
             col4.innerText="Add to Cart"
             col4.addEventListener("click",function(){
                 push(el)
             })
-            document.querySelector("#cart").append(col1,col3,col2,col4)
+            document.querySelector("#cart").append(col2,col3,col1,col4)
         })
     }
 
     function add(el) {
         toCart.forEach(function (elem) {
-            if (elem == el) {
+    
                 elem.qty++;
                 console.log(elem.qty)
-                localStorage.setItem("insidefruit", JSON.stringify(toCart))
-                // window.location.reload();
-            }
+                localStorage.setItem("insidefruit",JSON.stringify(toCart))
+                window.location.reload();
         })
     }
     function substract(el) {
@@ -642,7 +650,7 @@
                 elem.qty--;
                 console.log(elem.qty)
                 localStorage.setItem("insidefruit", JSON.stringify(toCart))
-                // window.location.reload();
+                window.location.reload();
             }
         })
     }

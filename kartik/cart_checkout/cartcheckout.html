@@ -533,6 +533,9 @@
             let in1 = document.createElement("button")
             in1.innerText = "-"
             in1.addEventListener("click", function () {
+                if(el.qty<=1){
+                    del(index)
+                }
                 substract(el)
             })
             let in2 = document.createElement("p")
