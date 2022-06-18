@@ -280,6 +280,14 @@
         hr{
            opacity: 0.3;
         }
+        #quantity{
+            background-color: white;
+            padding: 0px 10px;
+        }
+        #two>h2+div+h1{
+            font-weight: lighter;
+            color: rgb(201, 38, 38);
+        }
         /* ------------------------------------------------------------footer-end----------------------------------------------------- */
         #second {
             width: 100%;
@@ -490,10 +498,7 @@
             <h1><i class="fa fa-inr"></i>2,000</h1>
             <div id="cart">
                 <!-- append cart and increment decrement here -->
-                <button>-</button>
-                <input id="no" type="text">
-                <button>+</button>
-                <button id="cartadding">Add to Cart</button>
+                
             </div>
             <p>Storage Instructions:</p>
             <ul>
@@ -585,6 +590,9 @@
             price: "₹ 1,200"
         },
     ]
+    let toCart2 = JSON.parse(localStorage.getItem("insidefruit"))||[]
+    let datafromproduct = JSON.parse(localStorage.getItem("displayCart")) || [];
+
 
     getItem(imageObj);
 
@@ -601,6 +609,79 @@
             box.append(cont1, cont2, cont3)
             document.querySelector("#insidesec").append(box)
         })
+    }
+
+    gettocart(toCart2);
+
+    function gettocart(toCart2){
+        toCart2.forEach(function(el){
+            let col1=document.createElement("button")
+            col1.innerText="+"
+            col1.style.padding="10px 10px"
+            col1.addEventListener("click",function(){
+                add(el)
+            })
+            let col2=document.createElement("button")
+            col2.innerText="-"
+            col2.style.padding="10px 10px"
+            col2.addEventListener("click",function(){
+                if(el.qty<=1){
+                    return false;
+                }
+                substract(el)
+            })
+            let col3=document.createElement("p")
+            col3.innerText=el.qty
+            col3.style.padding="10px 20px"
+            col3.setAttribute("id","quantity")
+            col3.style.display="inline";
+            let col4=document.createElement("button")
+            col4.innerText="Add to Cart"
+            col4.style.padding="10px 20px"
+            col4.style.border="none"
+            col4.style.padding="10px 20px"
+            col4.addEventListener("click",function(){
+                push(el)
+            })
+            document.querySelector("#cart").append(col2,col3,col1,col4)
+        })
+    }
+
+    function add(el) {
+        toCart2.forEach(function (elem) {
+    
+                elem.qty++;
+                localStorage.setItem("insidefruit",JSON.stringify(toCart2))
+                window.location.reload();
+        })
+    }
+    function substract(el) {
+        toCart.forEach(function (elem) {
+            if (elem == el) {
+                elem.qty--;
+                localStorage.setItem("insidefruit", JSON.stringify(toCart2))
+                window.location.reload();
+            }
+        })
+    }
+
+    function push(el){
+        let flag=false;
+        datafromproduct.forEach(function(elem){
+            if(elem.name===el.name){
+                elem.qty++;
+                localStorage.setItem("displayCart", JSON.stringify(datafromproduct));
+                flag=true;
+                alert("product already in cart")
+                return;
+            }
+        }) 
+        if(flag==false){
+        datafromproduct.push(el);
+        localStorage.setItem("displayCart", JSON.stringify(datafromproduct));
+        alert("product added to cart")
+        } 
+
     }
 
     let im = document.getElementById("im");
