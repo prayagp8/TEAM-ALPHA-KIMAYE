@@ -1,0 +1,22 @@
+fresh cut = [
+    {
+    image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/products/47dfb7d1-d8d3-4c96-bda9-7dc85dfdec51_540x.png?v=1613364164",
+    productName:"Pomegranate Seeds (Arils Cup) 125g",
+    priceRange:"₹55-₹140",
+    },
+    {
+     image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/products/24d0f9c9-fe83-40a3-84ab-300e73e4ff8d_540x.png?v=1611811511",
+     productName:"Coconut Chunks Cup (100g)",
+     priceRange:"₹51-₹130",
+    },
+     {
+     image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/products/0fce7fd6-f30e-45df-8c52-234acbd62023_540x.png?v=1611811509",
+     productName:"Grated Coconut Punnet",
+     priceRange:"₹51",
+    },
+     {
+     image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/products/62cef687-de59-4f5a-acf3-4df1238c3e29-min_540x.png?v=1614324446",
+     productName:"Kimaye Arils-Coco Cup (125g)",
+     priceRange:"₹  -₹ ",
+    },
+]

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>kimaye</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="landing.css" />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      /* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+#signInForm{
+    width: 23%;
+    position: absolute;
+    right:0;
+    top:0;
+    display: none;
+    z-index: 2;
+    background-color: white;
+    padding-bottom: 20px;
+    border: 1px solid;
+}
+#signInForm>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+
+}
+#signInForm>div:nth-child(1)>button{
+    background-color: black;
+    color: white;
+}
+#signInForm>div:nth-child(2)>img{
+    width: 100%;
+}#signInForm>div:nth-child(3){
+    width: 90%;
+    margin: 10px auto;
+}#signInForm>div:nth-child(3) input{
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+}
+#signInForm>div:nth-child(3) input+button{
+    width: 102%;
+    padding: 10px 0;
+}#signInForm>div:nth-child(4) button{
+    padding: 10px 20px;
+    margin: auto 50%;
+}#signInForm>div:nth-child(4) img{
+    width: 100%;
+}
+#signInForm button:hover{
+    cursor: pointer;
+}
+#logInForm{
+    width: 23%;
+    position: absolute;
+    right:0;
+    top:0;
+    display: none;
+    z-index: 2;
+    background-color: white;
+    padding-bottom: 20px;
+    border: 1px solid;
+}
+#logInForm>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+
+}
+#logInForm>div:nth-child(1)>button{
+    background-color: black;
+    color: white;
+}
+#logInForm>div:nth-child(3)>img{
+    width: 100%;
+}#logInForm>div:nth-child(2){
+    width: 90%;
+    margin: 10px auto;
+}#logInForm>div:nth-child(2) input{
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+}
+#logInForm>div:nth-child(2) p+button{
+    width: 102%;
+    padding: 10px 0;
+    margin-top: 10px;
+}#logInForm>div:nth-child(4) button{
+    width: 40%;
+    padding: 10px 5px;
+    margin: auto 35%;
+}#logInForm>div:nth-child(4) img{
+    width: 100%;
+}
+#logInForm button:hover{
+    cursor: pointer;
+}#logInForm>div:nth-child(2) p:hover{
+    color: #98cb4c;
+    cursor: pointer;
+}#logInForm>div:nth-child(2) p>img{
+    width: 5%;
+}
+    </style>
+
+    <!-- Demo styles -->
+  </head>
+
+  <body>
+    <header>
+      <p>Delivering in Mumbai and Delhi | Same day delivery!</p>
+    </header>
+    <nav>
+      <div class="navbar">
+        <div class="box1">
+          <ul>
+            <li>
+              shop
+              <div class="sub-menu">
+                <ul>
+                  <a href="allFruits.html"><li>ALL FRUITS</li></a>
+                  <a href="freshCut.html"><li>FRESH CUTS</li></a>
+                  <a href="fruitCombo.html"><li>FRUIT COMBOS</li></a>
+                  <a href="gift_by_kimaye.html"><li>GIFT BY KIMAYE</li></a>
+                  <a href="grapes.html"><li>GRAPES FAMILY BY KIMAYE</li></a>
+                  <li>RETURN AND REPLACEMENT</li>
+                  <a href="communityPage.html"><li>COMMUNITY BUYING</li></a>
+                </ul>
+              </div>
+            </li>
+            <li>
+              learn
+              <div class="sub-menu">
+                <ul>
+                  <a href="our_story.html"><li>OUR STORY</li></a>
+                  <li>WHY KIMAYE</li>
+                  <a href="traceability.html"><li>TRACEABILITY</li></a>
+                  <a href="Beyond_fruits.html"><li>BEYOND FRUITS</li></a>
+                </ul>
+              </div>
+            </li>
+            <a href="grow.html"><li>GROW</li></a>
+          </ul>
+        </div>
+        <div class="box2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+            alt=""
+          />
+        </div>
+        <div class="box3">
+          <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+          <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div onclick="showLogIn()">
+            <a href="#"></a><i class="fa-solid fa-user"></i>
+          </div>
+          <div><a href=""></a><i class="fa-solid fa-cart-arrow-down"></i></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="caruser">
+      <img
+        src="https://serene-bubblegum-a6bd87.netlify.app/firstpagw.jpg"
+        id="slider"
+      />
+      <button><</button>
+      <button>></button>
+    </div>
+    <div id="recomended_header">
+      <img src="https://serene-bubblegum-a6bd87.netlify.app/rec.PNG" alt="" />
+    </div>
+
+    <div id="recomended_container"></div>
+
+    <div id="kimahi_mid">
+      <img
+        src="https://serene-bubblegum-a6bd87.netlify.app/fruit23.png"
+        alt=""
+      />
+      <div id="green_mid_text">
+        <img
+          src="https://serene-bubblegum-a6bd87.netlify.app/hearFrom.PNG"
+          alt=""
+        />
+        <p>Many of us share common safety concerns about the food we eat.</p>
+        <br />
+        <p>
+          When it comes to fruits, these concerns are even more serious in terms
+          of the way they are grown and handled throughout their farm-to-home
+          journey. We make eating fruits a worry-free and enjoyable experience
+          for you.
+        </p>
+        <br />
+        <p>
+          Since 2009, we have set the benchmark for fruit safety and quality in
+          35 countries. Kimaye is now expanding its footprint in India, bringing
+          you multiple varieties of fruit that are grown, packaged, and
+          delivered in the safest and most socially responsible manner.
+        </p>
+        <img
+          src="https://serene-bubblegum-a6bd87.netlify.app/safe.PNG"
+          alt=""
+        />
+        <button>KNOW MORE</button>
+      </div>
+    </div>
+    <div id="green_botm">
+      <img
+        src="https://serene-bubblegum-a6bd87.netlify.app/green%20bottom.PNG"
+        alt=""
+      />
+    </div>
+
+    <div id="secrate">
+      <img
+        src="https://serene-bubblegum-a6bd87.netlify.app/sectrate.PNG"
+        alt=""
+      />
+    </div>
+
+    <div class="knowus" id="states">
+      <div></div>
+      <div>
+        <img id="knowus_img" />
+      </div>
+    </div>
+
+    <div id="yellow_div">
+      <img
+        src="https://serene-bubblegum-a6bd87.netlify.app/yellow%20-%20Copy.PNG"
+        alt=""
+        id="upper_img_yellow"
+      />
+      <div id="y_slider"></div>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="https://serene-bubblegum-a6bd87.netlify.app/silder1.PNG"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://serene-bubblegum-a6bd87.netlify.app/slider2.PNG"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://serene-bubblegum-a6bd87.netlify.app/slider3.PNG"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://serene-bubblegum-a6bd87.netlify.app/silder%204.PNG"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <div id="bottom_img_yellow">
+        <img
+          src="https://serene-bubblegum-a6bd87.netlify.app/yellow%20bottom.PNG"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div id="for_us_container">
+      <img
+        src="https://serene-bubblegum-a6bd87.netlify.app/us-pic.PNG"
+        alt=""
+      />
+      <div id="for_us">
+        <div>
+          <img
+            src="https://scontent.cdninstagram.com/v/t51.29350-15/287998135_425802062515036_1538122002023877767_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=ARlxlou9v4YAX95BOYN&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9YvYCrF6jFDJQ26DJo9fXJGZoeYveJzNLeWdZollvmTw&oe=62B022B7"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://scontent.cdninstagram.com/v/t51.29350-15/287777520_709043673687257_3035340965363558444_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=qcpWAq8zICEAX-Q2OuT&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9Izjbk_K86ZXJoIG9btxbf4H3KyuEoN58QHeYea2obmQ&oe=62AFC2FF"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://scontent.cdninstagram.com/v/t51.29350-15/287661335_435396271444075_5269129130906661203_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=chNto7ljN2QAX9RDh8n&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-2_MuSy4369qooQUFt4uLUUeq3jDPZfgtP8YC9dWAXsg&oe=62B06C84"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://scontent.cdninstagram.com/v/t51.29350-15/286476421_5512742678790182_9133878254313440813_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=lb_ZGm3wyeUAX8jYSln&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-74U3HrBQQfU5WttYkXPl-Q2rkSz8OuP9X5z-28spHcw&oe=62B10515"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <div class="box">
+          <p>FAQ'S</p>
+          <p>Contact Us</p>
+          <p>shipping & return policy</p>
+          <p>terms and condition</p>
+          <p>privacy policy</p>
+        </div>
+
+        <div id="box2">
+          <div>
+            <h3>Follow us on</h3>
+            <div class="social_icon">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                alt="facebook"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                alt="instagram"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                alt="twitter"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright">
+      <p>copyright2020 All rights reserved</p>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040"
+        alt=""
+      />
+    </div>
+    <!-- footer ended -->
+
+    <div id="signInForm">
+      <div>
+        <h1>SIGN IN</h1>
+        <button onclick="closeLogINSignUp()">CLOSE X</button>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cjNy.jpg" alt="" />
+        <img src="https://i.im.ge/2022/06/17/r4cyMK.jpg" alt="" />
+      </div>
+      <div>
+        <form action="">
+          <label for="name">First Name</label>
+          <input type="name" id="firstName" />
+          <label for="name">Last Name</label>
+          <input type="name" id="lastName" />
+          <label for="">Email Address</label>
+          <input type="email" id="singEmail" />
+          <label for="Password">Password</label>
+          <input type="password" id="SignPass" />
+          <button>REGISTER</button>
+        </form>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cCxX.jpg" alt="" />
+        <button onclick="showLogIn()">LOGIN</button>
+      </div>
+    </div>
+
+    <div id="logInForm">
+      <div>
+        <h1>SIGN IN</h1>
+        <button onclick="closeLogINSignUp()">CLOSE X</button>
+      </div>
+      <div>
+        <form id="formLogin" action="">
+          <label for="">Email Address</label>
+          <input type="email" id="emailId" />
+          <label for="Password">Password</label>
+          <input type="password" id="passLog" />
+          <p>
+            <img
+              src="https://cdn0.iconfinder.com/data/icons/seo-line-25/48/logo_google_marketing_platform-512.png"
+              alt=""
+            />
+            Forgot your password?
+          </p>
+          <button>LOGIN</button>
+        </form>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cjNy.jpg" alt="" />
+        <img src="https://i.im.ge/2022/06/17/r4cyMK.jpg" alt="" />
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cCxX.jpg" alt="" />
+        <button onclick="showSignUp()">Create An Account</button>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      let img = document.querySelector("#slider");
+      let button = document.querySelectorAll("button");
+      let imgNum = 0;
+
+      let = imgArray = [
+        "https://serene-bubblegum-a6bd87.netlify.app/firstpagw.jpg",
+
+        "https://sunny-quokka-f9b7b4.netlify.app/Indian-plum-and-peach-banner%20copy.jpg",
+
+        "https://sunny-quokka-f9b7b4.netlify.app/Untitled-1%20copy.jpg",
+
+        "https://sunny-quokka-f9b7b4.netlify.app/Delhi-launch-banner%20copy.jpg",
+
+        "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerArtboard_1.jpg?v=1650952002",
+
+        "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerAssured_safety_1.jpg?v=1650952014",
+
+        "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerWe_serve_you_1.jpg?v=1650952015",
+      ];
+
+      button[0].addEventListener("click", function () {
+        if (imgNum === 0) {
+          imgNum = imgArray.length - 1;
+        } else {
+          imgNum--;
+        }
+        img.src = imgArray[imgNum];
+      });
+
+      button[1].addEventListener("click", function () {
+        if (imgNum === imgArray.length - 1) {
+          imgNum = 0;
+        } else {
+          imgNum++;
+        }
+        img.src = imgArray[imgNum];
+      });
+
+      let imgArr = [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-1-min_570x.png?v=1614338437",
+          h1: "ALL FRUITS",
+          p: "Pick and choose from a wide range of delicious fruits",
+        },
+
+        {
+          img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-3-min_570x.png?v=1614338730",
+          h1: "FRESH CUTS",
+          p: "We want to spoon-feed you… quite literally",
+        },
+        {
+          img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-2-min_570x.jpg?v=1614339080",
+          h1: "FRUIT COMBOS",
+          p: "Indulge in fruit combinations created by us",
+        },
+
+        {
+          img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/2I8A6078_570x.jpg?v=1631516874",
+          h1: "GIFTS BY KIMAYE",
+          p: "Healthy & memorable gifts for your loved ones",
+        },
+      ];
+
+      imgArr.forEach(function (elem) {
+        let card = document.createElement("div");
+
+        let img_div = document.createElement("div");
+        img_div.setAttribute("class", "img_container");
+        card.append(img_div);
+
+        let producImg = document.createElement("img");
+        producImg.setAttribute("src", elem.img);
+        img_div.append(producImg);
+
+        let prodName = document.createElement("h1");
+        prodName.innerText = elem.h1;
+        prodName.style.textAlign = "center";
+        prodName.style.backgroundColor = "transparent";
+        card.append(prodName);
+
+        let description = document.createElement("p");
+        description.innerText = elem.p;
+        description.style.textAlign = "center";
+
+        description.style.backgroundColor = "transparent";
+        card.append(description);
+
+        let btn = document.createElement("button");
+        btn.innerText = "Shop Now";
+
+        card.append(btn);
+
+        document.querySelector("#recomended_container").append(card);
+      });
+    </script>
+  </body>
+</html>
+
+<script>
+  let arr = [
+    {
+      name: "01",
+      link: "https://serene-bubblegum-a6bd87.netlify.app/bottomslide1.PNG",
+    },
+    {
+      name: "02",
+      link: "https://serene-bubblegum-a6bd87.netlify.app/bottom_slide2.PNG",
+    },
+    {
+      name: "03",
+      link: "https://serene-bubblegum-a6bd87.netlify.app/bottom_slide3.PNG",
+    },
+    {
+      name: "04",
+      link: "https://serene-bubblegum-a6bd87.netlify.app/bottom_slide4.PNG",
+    },
+    {
+      name: "05",
+      link: "https://serene-bubblegum-a6bd87.netlify.app/bottom_slide5.PNG",
+    },
+  ];
+
+  for (let i = 0; i < arr.length; i++) {
+    let head = document.createElement("h4");
+    head.innerText = arr[i].name;
+
+    head.addEventListener("click", function () {
+      showImg(i);
+    });
+    document.querySelector("#states>div:nth-child(1)").append(head);
+  }
+  let immg = document.querySelector("#states>div:nth-child(2)>img");
+  immg.setAttribute(
+    "src",
+    "https://serene-bubblegum-a6bd87.netlify.app/bottomslide1.PNG"
+  );
+  function showImg(i) {
+    immg.setAttribute("src", arr[i].link);
+  }
+
+
+
+
+
+  // login start functionality:-
+  let logOrNot = JSON.parse(localStorage.getItem("loginStatus")) || false;
+
+
+function showSignUp() {
+    let x = document.querySelector("#signInForm");
+    x.style = "Display:block";
+    let y = document.querySelector("#logInForm");
+    y.style = "Display:none";
+}
+function closeLogINSignUp() {
+    let x = document.querySelector("#signInForm");
+    x.style = "Display:none";
+    let y = document.querySelector("#logInForm");
+    y.style = "Display:none";
+}
+function showLogIn() {
+    if (logOrNot) {
+        window.location.href="myAccount.html"
+    } else {
+        let y = document.querySelector("#logInForm");
+        y.style = "Display:block";
+        let x = document.querySelector("#signInForm");
+        x.style = "Display:none";
+    }
+
+}
+
+let signInform = document.querySelector("#signInForm>div>form");
+signInform.addEventListener("submit", signInFunction);
+
+let sign_Data_Arr = JSON.parse(localStorage.getItem("signInData")) || [];
+function checkEmail(){
+    let filtered=sign_Data_Arr.filter(function(el){
+        return el.email==document.querySelector("#singEmail").value
+    })
+    if(filtered.length>0 && sign_Data_Arr.length!=0){
+        return true
+    }else{
+        return false
+    }
+}
+function signInFunction() {
+    event.preventDefault();
+    if(checkEmail()==true){
+        alert("Email Already Exist")
+    }else {
+    let emailLog = document.querySelector("#singEmail").value;
+    let passwordLog = document.querySelector("#SignPass").value;
+    let nameFirst = document.querySelector("#firstName").value;
+    let nameSec = document.querySelector("#lastName").value;
+    console.log(passwordLog)
+    let obj = {
+        email: emailLog,
+        password: passwordLog,
+        firstName: nameFirst,
+        secondName: nameSec
+    }
+    sign_Data_Arr.push(obj);
+    localStorage.setItem("signInData", JSON.stringify(sign_Data_Arr));
+}
+}
+
+
+let logInform = document.querySelector("#logInForm>div>form");
+logInform.addEventListener("submit", logInFunction);
+
+
+function logInFunction() {
+    event.preventDefault();
+
+    let emailLog = document.querySelector("#emailId").value;
+    let passwordLog = document.querySelector("#passLog").value;
+    sign_Data_Arr.forEach(function (el, i) {
+        if (el.email == emailLog && el.password == passwordLog) {
+            alert("Login Successful\n" + "Welcome " + el.firstName)
+            logOrNot = true;
+            localStorage.setItem("loginStatus",JSON.stringify(logOrNot));
+            localStorage.setItem("loggedIdDetails",JSON.stringify(el));
+            window.location.reload();
+        }else{
+            alert("login Failed")
+        }
+    })
+
+}
+
+</script>

@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#signInForm{
+    width: 23%;
+    position: absolute;
+    right:0;
+    top:0;
+    display: none;
+    z-index: 2;
+    background-color: white;
+    padding-bottom: 20px;
+    border: 1px solid;
+}
+#signInForm>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+
+}
+h1{
+    background-color: black;
+}
+#signInForm>div:nth-child(1)>button{
+    background-color: black;
+    color: white;
+}
+#signInForm>div:nth-child(2)>img{
+    width: 100%;
+}#signInForm>div:nth-child(3){
+    width: 90%;
+    margin: 10px auto;
+}#signInForm>div:nth-child(3) input{
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+}
+#signInForm>div:nth-child(3) input+button{
+    width: 102%;
+    padding: 10px 0;
+}#signInForm>div:nth-child(4) button{
+    padding: 10px 20px;
+    margin: auto 50%;
+}#signInForm>div:nth-child(4) img{
+    width: 100%;
+}
+#signInForm button:hover{
+    cursor: pointer;
+}
+#logInForm{
+    width: 23%;
+    position: absolute;
+    right:0;
+    top:0;
+    display: none;
+    z-index: 2;
+    background-color: white;
+    padding-bottom: 20px;
+    border: 1px solid;
+}
+#logInForm>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+
+}
+#logInForm>div:nth-child(1)>button{
+    background-color: black;
+    color: white;
+}
+#logInForm>div:nth-child(3)>img{
+    width: 100%;
+}#logInForm>div:nth-child(2){
+    width: 90%;
+    margin: 10px auto;
+}#logInForm>div:nth-child(2) input{
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+}
+#logInForm>div:nth-child(2) p+button{
+    width: 102%;
+    padding: 10px 0;
+    margin-top: 10px;
+}#logInForm>div:nth-child(4) button{
+    width: 40%;
+    padding: 10px 5px;
+    margin: auto 35%;
+}#logInForm>div:nth-child(4) img{
+    width: 100%;
+}
+#logInForm button:hover{
+    cursor: pointer;
+}#logInForm>div:nth-child(2) p:hover{
+    color: #98cb4c;
+    cursor: pointer;
+}#logInForm>div:nth-child(2) p>img{
+    width: 5%;
+}

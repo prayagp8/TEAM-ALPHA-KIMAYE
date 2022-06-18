@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      #header {
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #437111;
+        color: white;
+        font-weight: bold;
+      }
+
+      .box1 > ul {
+        display: inline-flex;
+        justify-content: flex-start;
+        list-style: none;
+      }
+      .box1 > ul li {
+        width: 120px;
+        margin: 15px;
+        color: black;
+      }
+
+      .box1 > ul li {
+        margin: 15px;
+      }
+
+      /* .box1 > ul > a>li:hover  {
+        color: #437111;
+      } */
+      a > li:hover {
+        color: #437111;
+      }
+
+      .sub-menu {
+        display: none;
+        z-index: 1;
+      }
+
+      .box1 > ul li:hover .sub-menu {
+        display: block;
+        position: absolute;
+        background-color: white;
+      }
+
+      .box1 > ul li:hover .sub-menu ul {
+        list-style-type: none;
+        background-color: white;
+        display: block;
+      }
+
+      .box1 > ul li:hover .sub-menu ul li {
+        width: 150px;
+        background-color: white;
+        text-align: left;
+      }
+
+      .sub-menu ul li:hover {
+        transform: scale(0.9);
+
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      .box2 {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box1 {
+        width: 33%;
+        gap: 10px;
+        align-items: center;
+        list-style-type: none;
+        padding-left: 25px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .box3 {
+        width: 33%;
+        justify-content: flex-end;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        padding-right: 30px;
+        font-size: 1.2rem;
+      }
+
+      .box2 > img {
+        width: 50%;
+      }
+
+      nav {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        background-color: #eeeeea;
+      }
+      body {
+        line-height: 1.5;
+        font-family: "Poppins", sans-serif;
+        background-color: #eeeee9;
+      }
+
+      .links {
+        width: 40%;
+        height: 100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .links > p > a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+      }
+
+      #homelink {
+        width: 70%;
+        height: 50px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #main {
+        width: 70%;
+        height: auto;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 30px 20px;
+      }
+
+      #main > div > a > img {
+        width: 100%;
+        border-radius: 20px;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      #main > div {
+        position: relative;
+      }
+
+      #main > div > p {
+        text-align: center;
+        font-size: 20px;
+        font-family: "Times New Roman", Times, serif;
+        cursor: pointer;
+      }
+
+      #main > div > p:last-child {
+        color: green;
+      }
+
+      #main > div:hover img {
+        transform: scale(1.07);
+      }
+
+      button {
+        width: 100%;
+        height: 40px;
+        background-color: green;
+        color: white;
+        border-radius: 0 0 20px 20px;
+        position: absolute;
+        left: 0px;
+        bottom: 60px;
+        opacity: 0;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      #main > div:hover button {
+        transform: scale(1.07);
+        top: 195px;
+        opacity: 1;
+      }
+
+      #homelink > p + p {
+        color: gray;
+        font-size: 13px;
+      }
+
+      #homelink > p {
+        font-size: 13px;
+        color: gray;
+      }
+
+      footer {
+        background-color: #7d9c5b;
+        padding: 70px 0;
+        margin-top: 100px;
+      }
+
+      #big {
+        width: 80%;
+        margin: auto;
+        margin-top: -50px;
+      }
+
+      .footer_col > ul {
+        list-style: none;
+      }
+
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .footer_col {
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .footer_col ul li a:hover {
+        color: red;
+      }
+
+      #socialMedia > a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        margin: 0 10px 10px 0;
+        line-height: 40px;
+        border-radius: 50%;
+      }
+      #socialMedia {
+        margin-right: 200px;
+      }
+      i {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+      }
+      .copyright {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .copyright > img {
+        width: 10%;
+        height: 10%;
+        margin-top: 15px;
+      }
+
+      .copyright > p {
+        font-weight: lighter;
+      }
+      hr {
+        opacity: 0.3;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">Delivering in Mumbai and Delhi | Same day delivery!</div>
+    <nav>
+      <div class="navbar">
+        <div class="box1">
+          <ul>
+            <li>
+              shop
+              <div class="sub-menu">
+                <ul>
+                  <a href="allFruits.html"><li>ALL FRUITS</li></a>
+                  <a href="freshCut.html"><li>FRESH CUTS</li></a>
+                  <a href="fruitCombo.html"><li>FRUIT COMBOS</li></a>
+                  <a href="gift_by_kimaye.html"><li>GIFT BY KIMAYE</li></a>
+                  <a href="grapes.html"><li>GRAPES FAMILY BY KIMAYE</li></a>
+                  <li>RETURN AND REPLACEMENT</li>
+                  <a href="communityPage.html"><li>COMMUNITY BUYING</li></a>
+                </ul>
+              </div>
+            </li>
+            <li>
+              learn
+              <div class="sub-menu">
+                <ul>
+                  <a href="our_story.html"><li>OUR STORY</li></a>
+                  <li>WHY KIMAYE</li>
+                  <a href="traceability.html"><li>TRACEABILITY</li></a>
+                  <a href="Beyond_fruits.html"><li>BEYOND FRUITS</li></a>
+                </ul>
+              </div>
+            </li>
+            <a href="grow.html"><li>GROW</li></a>
+          </ul>
+        </div>
+        <div class="box2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+            alt=""
+          />
+        </div>
+        <div class="box3">
+          <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+          <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div><a href="#"></a><i class="fa-solid fa-user"></i></div>
+          <div>
+            <a href="cartcheckout.html"
+              ><i class="fa-solid fa-cart-arrow-down"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="first">
+      <div class="links">
+        <p><a href="allFruits.html">all fruits</a></p>
+        <p><a href="freshCut.html">fresh cuts</a></p>
+        <p><a href="fruitCombo.html">fruit combos</a></p>
+        <p><a href="gift_by_kimaye.html">gifts by kimaye</a></p>
+      </div>
+    </div>
+    <div class="big">
+      <div id="homelink">
+        <p>
+          <a href="index.html"><i class="fa fa-home"></i>Home /</a> Gifts by
+          kimaye
+        </p>
+        <p>Showing 4 results</p>
+      </div>
+    </div>
+    <div class="big">
+      <div id="main">
+        <!-- appended divs with js -->
+      </div>
+    </div>
+    <div class="big">
+      <div class="links">
+        <p><a href="allFruits.html">all fruits</a></p>
+        <p><a href="freshCut.html">fresh cuts</a></p>
+        <p><a href="fruitCombo.html">fruit combos</a></p>
+        <p><a href="gift_by_kimaye.html">gifts by kimaye</a></p>
+      </div>
+    </div>
+    <footer>
+      <div id="big">
+        <div id="container">
+          <div class="footer_col">
+            <ul>
+              <li><a href="">FAQ's</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">Shipping & Return policy</a></li>
+              <li><a href="">Terms & Conditions</a></li>
+              <li><a href="">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer_col">
+            <ul>
+              <li><a href="">Follow us on</a></li>
+              <div id="socialMedia">
+                <a href="#"
+                  ><img
+                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                    alt=""
+                /></a>
+                <a href="#"
+                  ><img
+                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                    alt=""
+                /></a>
+                <a href="#"
+                  ><img
+                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                    alt=""
+                /></a>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="copyright">
+          <p>copyright2020 All rights reserved</p>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040"
+            alt=""
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script>
+  let itemObj = [
+    {
+      image:
+        "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7790_540x.jpg?v=1631346990",
+      name: "Fruit Box By Kimaye (Strength)",
+      price: 1800,
+      qty: 1,
+      link: "particular1.html",
+    },
+    {
+      image:
+        "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_540x.jpg?v=1631347621",
+      name: "Fruit Box By Kimaye (Adore)",
+      price: 2000,
+      qty: 1,
+      link: "particular2.html",
+    },
+    {
+      image:
+        "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
+      name: "Fruit Box By Kimaye (Cherish)",
+      price: 1400,
+      qty: 1,
+      link: "particular3.html",
+    },
+    {
+      image:
+        "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
+      name: "Fruit Box By Kimaye (Seasonal)",
+      price: 1200,
+      qty: 1,
+      link: "particular4.html",
+    },
+  ];
+  let newCart = JSON.parse(localStorage.getItem("displayCart")) || [];
+  let inside = [];
+  gettingItems(itemObj);
+
+  function gettingItems(itemObj) {
+    itemObj.forEach(function (el) {
+      let box = document.createElement("div");
+      let a = document.createElement("a");
+      a.setAttribute("href", el.link);
+      let cont1 = document.createElement("img");
+      cont1.setAttribute("src", el.image);
+      cont1.addEventListener("click", function () {
+        pick(el);
+      });
+      let cont2 = document.createElement("p");
+      cont2.innerText = el.name;
+      let cont5 = document.createElement("i");
+      cont5.setAttribute("class", "fa fa-inr");
+      cont5.innerText = el.price;
+      let cont3 = document.createElement("p");
+      // cont3.innerText=el.price;
+      cont3.style.color = "red";
+      let cont4 = document.createElement("button");
+      // cont4.innerText="Add to Cart"
+      cont4.addEventListener("click", function () {
+        getItem(el);
+      });
+      cont6 = document.createElement("i");
+      cont6.setAttribute("class", "fa fa-shopping-cart");
+      cont6.innerText = "Add to Cart";
+      cont3.append(cont5);
+      cont4.append(cont6);
+      a.append(cont1);
+      box.append(a, cont2, cont3, cont4);
+      document.querySelector("#main").append(box);
+    });
+  }
+  function getItem(el) {
+    let flag = false;
+    newCart.forEach(function (elem) {
+      if (elem.name === el.name) {
+        elem.qty++;
+        localStorage.setItem("displayCart", JSON.stringify(newCart));
+        flag = true;
+        alert("product already in cart");
+        return;
+      }
+    });
+    if (flag == false) {
+      newCart.push(el);
+      localStorage.setItem("displayCart", JSON.stringify(newCart));
+      alert("product added to cart");
+    }
+  }
+  function pick(el) {
+    inside.push(el);
+    localStorage.setItem("insidefruit", JSON.stringify(inside));
+  }
+</script>
