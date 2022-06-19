@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp Page</title>
+</head>
+<style>
+  body{
+    background-color: #a8f1fd;
+  }
+       .container {
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+      margin-top: 100px;
+      border: 1px solid black;
+      width: 30%;
+      padding-bottom: 40px;
+      background-image: url(https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&w=600);
+      border-radius: 20px;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      color: white;
+    }
+    input[type="submit"]{
+        background-color:green;
+        border: none;
+        padding:8px 15px;
+        display: block;
+        margin: 0 auto;
+        color: white;
+        margin-top:15px;
+        border-radius: 10px;
+    }
+    h2{
+        text-align: center;
+    }
+    #otp{
+      padding: 10px;
+      border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+          <h2>OTP 
+            <br> Validation</h2>
+          <form id="payment">
+​
+            <input type="password" id="otp" placeholder="enter your OTP" />
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", validate);
+    function validate() {
+        event.preventDefault();
+        let otp = document.querySelector("#otp").value;
+        if(otp=="1234"){
+            alert("Payment successful! Thank you for Shopping. ")
+            window.location.href = "index.html"
+        }else{
+            alert("Wrong OTP payment failed!!")
+            
+        }
+    }
+</script>

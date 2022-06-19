@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inGrow</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      #signInForm {
+        width: 23%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+        z-index: 2;
+        background-color: white;
+        padding-bottom: 20px;
+        border: 1px solid;
+      }
+      #signInForm > div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+        padding: 20px 10px;
+        margin-bottom: 10px;
+      }
+      #signInForm > div:nth-child(1) > button {
+        background-color: black;
+        color: white;
+      }
+      #signInForm > div:nth-child(2) > img {
+        width: 100%;
+      }
+      #signInForm > div:nth-child(3) {
+        width: 90%;
+        margin: 10px auto;
+      }
+      #signInForm > div:nth-child(3) input {
+        width: 100%;
+        margin: 10px 0;
+        height: 40px;
+      }
+      #signInForm > div:nth-child(3) input + button {
+        width: 102%;
+        padding: 10px 0;
+      }
+      #signInForm > div:nth-child(4) button {
+        padding: 10px 20px;
+        margin: auto 50%;
+      }
+      #signInForm > div:nth-child(4) img {
+        width: 100%;
+      }
+      #signInForm button:hover {
+        cursor: pointer;
+      }
+      #logInForm {
+        width: 23%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+        z-index: 2;
+        background-color: white;
+        padding-bottom: 20px;
+        border: 1px solid;
+      }
+      #logInForm > div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+        padding: 20px 10px;
+        margin-bottom: 10px;
+      }
+      #logInForm > div:nth-child(1) > button {
+        background-color: black;
+        color: white;
+      }
+      #logInForm > div:nth-child(3) > img {
+        width: 100%;
+      }
+      #logInForm > div:nth-child(2) {
+        width: 90%;
+        margin: 10px auto;
+      }
+      #logInForm > div:nth-child(2) input {
+        width: 100%;
+        margin: 10px 0;
+        height: 40px;
+      }
+      #logInForm > div:nth-child(2) p + button {
+        width: 102%;
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+      #logInForm > div:nth-child(4) button {
+        width: 40%;
+        padding: 10px 5px;
+        margin: auto 35%;
+      }
+      #logInForm > div:nth-child(4) img {
+        width: 100%;
+      }
+      #logInForm button:hover {
+        cursor: pointer;
+      }
+      #logInForm > div:nth-child(2) p:hover {
+        color: #98cb4c;
+        cursor: pointer;
+      }
+      #logInForm > div:nth-child(2) p > img {
+        width: 5%;
+      }
+
+      header {
+        display: flex;
+
+        background-color: #437111;
+        color: white;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      header > p {
+        background-color: #437111;
+      }
+
+      .box1 > ul {
+        display: inline-flex;
+        justify-content: flex-start;
+        list-style: none;
+      }
+
+      .box1 > ul li {
+        margin: 15px;
+      }
+
+      .box1 > ul > li:hover a {
+        color: #98cb4d;
+      }
+
+      .sub-menu {
+        display: none;
+        z-index: 1;
+      }
+
+      .box1 > ul li:hover .sub-menu {
+        display: block;
+        position: absolute;
+        background-color: white;
+      }
+
+      .box1 > ul li:hover .sub-menu ul {
+        list-style-type: none;
+        background-color: white;
+        display: block;
+      }
+
+      .box1 > ul li:hover .sub-menu ul li {
+        width: 150px;
+        background-color: white;
+        text-align: left;
+      }
+
+      .sub-menu ul li:hover {
+        transform: scale(0.9);
+
+        transition: all 0.2s ease;
+        cursor: pointer;
+        color: #437111;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      li {
+        color: black;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      .box2 {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box1 {
+        width: 33%;
+        gap: 10px;
+        align-items: center;
+        list-style-type: none;
+        padding-left: 25px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .box3 {
+        width: 33%;
+        justify-content: flex-end;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        padding-right: 30px;
+        font-size: 1.2rem;
+      }
+
+      .box2 > img {
+        width: 50%;
+      }
+
+      nav {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        background-color: #eeeeea;
+      }
+
+      #green {
+        background-color: #437111;
+        padding: 15px;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+      }
+
+      #green > h4 > span {
+        margin-left: 1%;
+      }
+
+      #green > h4 > span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #green > p > span:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      #greenPbox {
+        background-color: #98cb4d;
+        padding: 5px 10px;
+        width: 18%;
+        margin: 30px auto;
+        color: white;
+        text-align: center;
+      }
+
+      #conti {
+        display: flex;
+        width: 90%;
+        justify-content: space-evenly;
+        margin: auto;
+      }
+
+      #post > div {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: auto;
+        border-bottom: 1px solid gray;
+      }
+
+      #post > div > p:last-child {
+        color: grey;
+      }
+
+      #post {
+        width: 30%;
+        padding: 20px;
+        line-height: 20px;
+      }
+
+      #post > * {
+        margin-top: 20px;
+      }
+
+      #conti > #post > form {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      #conti > #post > form > input {
+        padding: 5px;
+        border: 1px thin;
+      }
+
+      #conti > #post > form > button {
+        padding: 7px;
+        background-color: #98cb4c;
+        border: transparent;
+      }
+
+      #conti > #data {
+        width: 65%;
+        line-height: 30px;
+        text-align: justify;
+      }
+
+      #mailLogo {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      #mailLogo > img {
+        width: 4%;
+      }
+
+      #mailLogo > img:hover {
+        cursor: pointer;
+      }
+      #post_Btn {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        margin-bottom: 20px;
+        padding: 10px 0;
+      }
+      #post_Btn > button {
+        padding: 5px 10px;
+        font-size: 20px;
+        background-color: white;
+        border: transparent;
+      }
+      #post_Btn > button:hover {
+        cursor: pointer;
+        color: #98cb4c;
+      }
+      body {
+        background-image: url(https://cdn.shopify.com/s/files/1/0449/5225/6667/files/jazz-bg-texture-min_1.jpg?v=1616673456);
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+      }
+      a:hover {
+        color: #98cb4d;
+      }
+      #footer {
+        background-color: #7d9c5b;
+      }
+      #footer > div {
+        /* border: 1px solid red; */
+        width: 80%;
+        margin: auto;
+        background-color: #7d9c5b;
+      }
+
+      #footer > div > div:first-child {
+        width: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+
+        background-color: transparent;
+      }
+      #footer > div > div > div:first-child {
+        /* border: 1px solid blue; */
+        font-size: 20px;
+        line-height: 30px;
+        background-color: #7d9c5b;
+      }
+
+      #footer > div > div > div:last-child {
+        /* border: 1px solid red; */
+        height: 200px;
+        width: 200px;
+        margin-left: 700px;
+        background-color: #7d9c5b;
+        font-size: 20px;
+      }
+      #footer > div > div > div:last-child > div {
+        display: flex;
+        height: 58px;
+        gap: 10px;
+        background-color: #7d9c5b;
+      }
+      #footer > div > div:last-child {
+        /* border: 1px solid blue; */
+        width: 100%;
+        height: 100px;
+
+        background-color: #7d9c5b;
+      }
+      #footer h3 {
+        background-color: #7d9c5b;
+      }
+      #footer h3 + img {
+        background-color: #7d9c5b;
+        width: 120px;
+        height: 30px;
+      }
+      #footer hr {
+        height: 1px;
+        background-color: black;
+        border: none;
+      }
+      #footer hr + div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        background-color: #7d9c5b;
+      }
+
+      #footer .social_icon img {
+        background-color: #7d9c5b;
+      }
+      @media all and (min-width: 480px) and (max-width: 760px) {
+        #conti {
+          flex-direction: column;
+        }
+        #conti > div {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <p>Deliviring in mubaai and delhi | same day delivery</p>
+    </header>
+    <nav>
+      <div class="navbar">
+        <div class="box1">
+          <ul>
+            <li>
+              shop
+              <div class="sub-menu">
+                <ul>
+                    <a href="allFruits.html"><li>ALL FRUITS</li></a>
+                    <a href="freshCut.html"><li>FRESH CUTS</li></a>
+                    <a href="fruitCombo.html"><li>FRUIT COMBOS</li></a>
+                    <a href="gift_by_kimaye.html"><li>GIFT BY KIMAYE</li></a>
+                    <a href="grapes.html"><li>GRAPES FAMILY BY KIMAYE</li></a>
+                    <li>RETURN AND REPLACEMENT</li>
+                    <a href="communityPage.html"><li>COMMUNITY BUYING</li></a>
+                </ul>
+              </div>
+            </li>
+            <li>
+              learn
+              <div class="sub-menu">
+                <ul>
+                    <a href="our_story.html"><li>OUR STORY</li></a>
+                    <a href="why_kimaye.html"><li>WHY KIMAYE</li></a>
+                    <a href="traceability.html"><li>TRACEABILITY</li></a>
+                    <a href="Beyond_fruits.html"><li>BEYOND FRUITS</li></a>
+                </ul>
+              </div>
+            </li>
+           <a href="grow.html"> <li>GROW</li></a>
+          </ul>
+        </div>
+        <div class="box2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+            alt=""
+          />
+        </div>
+        <div class="box3">
+          <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+          <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div onclick="showLogIn()">
+            <a href="#"></a><i class="fa-solid fa-user"></i>
+          </div>
+          <div><a href=""></a><i class="fa-solid fa-cart-arrow-down"></i></div>
+        </div>
+      </div>
+    </nav>
+    <div id="signInForm">
+      <div>
+        <h1>SIGN IN</h1>
+        <button onclick="closeLogINSignUp()">CLOSE X</button>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cjNy.jpg" alt="" />
+        <img src="https://i.im.ge/2022/06/17/r4cyMK.jpg" alt="" />
+      </div>
+      <div>
+        <form action="">
+          <label for="name">First Name</label>
+          <input type="name" id="firstName" />
+          <label for="name">Last Name</label>
+          <input type="name" id="lastName" />
+          <label for="">Email Address</label>
+          <input type="email" id="singEmail" />
+          <label for="Password">Password</label>
+          <input type="password" id="SignPass" />
+          <button>REGISTER</button>
+        </form>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cCxX.jpg" alt="" />
+        <button onclick="showLogIn()">LOGIN</button>
+      </div>
+    </div>
+
+    <div id="logInForm">
+      <div>
+        <h1>SIGN IN</h1>
+        <button onclick="closeLogINSignUp()">CLOSE X</button>
+      </div>
+      <div>
+        <form id="formLogin" action="">
+          <label for="">Email Address</label>
+          <input type="email" id="emailId" />
+          <label for="Password">Password</label>
+          <input type="password" id="passLog" />
+          <p>
+            <img
+              src="https://cdn0.iconfinder.com/data/icons/seo-line-25/48/logo_google_marketing_platform-512.png"
+              alt=""
+            />
+            Forgot your password?
+          </p>
+          <button>LOGIN</button>
+        </form>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cjNy.jpg" alt="" />
+        <img src="https://i.im.ge/2022/06/17/r4cyMK.jpg" alt="" />
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cCxX.jpg" alt="" />
+        <button onclick="showSignUp()">Create An Account</button>
+      </div>
+    </div>
+    <div id="green">
+      <h1>BLOG POST</h1>
+      <p><span>Home </span> / Archive by Category "Grow with Kimaye"</p>
+    </div>
+    <div id="conti">
+      <div id="data">
+        <p id="greenPbox">Grow with Kimaye</p>
+        <div id="artical"></div>
+        <div id="mailLogo">
+          <img
+            src="https://icones.pro/wp-content/uploads/2021/05/icones-de-messagerie-orange.png"
+            alt=""
+          />
+        </div>
+        <div id="post_Btn">
+          <button onclick="pagePre()">< PREVIOUS POST</button
+          ><button onclick="pageNext()">NEXT POST ></button>
+        </div>
+      </div>
+      <div id="post">
+        <h3>SEARCH</h3>
+        <form action="">
+          <input type="search" placeholder="Search for post" />
+          <button>SEARCH</button>
+        </form>
+        <h3>CATEGORIES</h3>
+        <p>
+          Pick a link list to show here in your under Blog sidebar > Quick links
+          link list.
+        </p>
+        <h3>RECENT POST</h3>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_334275008-2-opt2-1900px_70x_crop_center.progressive.jpg?v=1627119119"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >TOP FRUIT SAFETY TIPS YOU SHOULD BE SWEARING BY EVERY TIME YOU
+              CONSUME THEM .</a
+            >
+          </p>
+          <p>Jul 24, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_201343750_copy__66kb-1000px_70x_crop_center.progressive.jpg?v=1626676701"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >FRUITS RICH IN VITAMIN C THAT YOU SHOULD BE EATING EVERYDAY</a
+            >
+          </p>
+          <p>Jul 19, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_77286816-min__1625567830_114.143.85.97_70x_crop_center.progressive.jpg?v=1625638895"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >HOW TO REMOVE AND CLEAN HARMFUL PESTICIDES FROM FRUITS</a
+            >
+          </p>
+          <p>Jul 07, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/Blog_-_Benefits_of_fruits_70x_crop_center.progressive.jpg?v=1625147388"
+          />
+          <p>
+            <a href="innerGrow.html">WHY SHOULD YOU EAT FRUITS MORE OFTEN?</a>
+          </p>
+          <p>Jul 01, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/Untitled_design_51-min_70x_crop_center.png?v=1614341965"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >GRAPES: HOW THEY REACHED INDIA, TYPES AND HEALTH BENEFITS</a
+            >
+          </p>
+          <p>Feb 12, 2021</p>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div>
+        <div>
+          <div>
+            <h3>FAQ's</h3>
+            <h3>Contact Us</h3>
+            <h3>Shipping & Return Policy</h3>
+            <h3>Terms & Conditions</h3>
+            <h3>Privacy Policy</h3>
+          </div>
+
+          <div>
+            <h3>Follow us on</h3>
+            <div class="social_icon">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                alt="facebook"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                alt="instagram"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                alt="twitter"
+              />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <div>
+          <h3>Copyright©2020. All Rights Reserved</h3>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040"
+            alt="ting"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let arr = [
+    {
+      artical: `<h2 style="text-align: center;">Healthy at Heart</h2><p style="text-align: center;">By <span style="color: #98cb4c;">Kimaye Fruits</span></p><img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/healthy_heart.jpg" alt=""><p><span><strong>September 28, 2020 (IANS<em>life</em>)&nbsp;</strong>This World Heart Day, let’s have a light-hearted conversation about the importance of having a healthy heart and how one should take care of it.&nbsp; Being aware of cardiovascular diseases and measures to prevent them is outmost importance to all of us, especially adults of over 40 years of age, to ensure they follow
+                        a healthy routine.</span></p>
+                <p><span>Leading an unhealthy lifestyle, stress, excessive intake of salt and sugar through can result
+                        in high blood pressure which is harmful to the heart. The past few months may have tempted you
+                        to lead a sedentary life, with limited physical activity and excess consumption of junk food,
+                        which can have long term adverse effects if left unchecked. So step up! It’s time to take a
+                        little extra care of your heart!</span></p>
+                <p><span>These simple tweaks in your diet and lifestyle, suggested by experts at Kimaye Health- INI
+                        Farms, can go a long way in keeping your heart healthy and happy:</span></p>
+                <p><span><strong>Start your day with whole grains</strong>&nbsp;- Consuming whole grains like brown rice
+                        or whole wheat bring in great nutrition and is good for the heart as well. Substitute your white
+                        food with the brown, while keeping a check on the portion size. Other whole grains like Barley,
+                        oatmeal, and buckwheat are some other interesting options for you. Remember to never make your
+                        food routine mundane.</span></p>
+                <p><span><strong>Have fun with fruits</strong>&nbsp;- Go all fancy with your favourite fruits but make
+                        sure you don’t go overboard. Slice them into your fruit salads, or blend them for juices and
+                        smoothies. Consistently eating at least two fruits a day will surely go a long way. While all
+                        fruits come packed with sweetness and nutrients, Berries and Pomegranates are great for heart
+                        health because of their richness in anti-oxidants. So eat more ‘Red’ for good heart
+                        health!</span></p>
+                <p><span><strong>So-fa, So fit</strong>&nbsp;- Get away from the couch and get moving. Take mini-breaks
+                        in between your work routine to walk and stretch a little. Early morning workouts are usually
+                        the best to keep your metabolism up and your blood flow steady.</span></p>
+                <p><span><strong>Go wise with veggies</strong>&nbsp;- Green leafy vegetables are a must-have and no
+                        amount of fuss can change that. Veggies with every meal are a must. A bowl of veggies tends to
+                        keep you fuller for longer and helps you cut on the extra carbs that you might be reaching out
+                        for.</span></p>
+                <p><span><strong>Don’t be an owl</strong>&nbsp;- You could be all-wise, but not if you don’t sleep on
+                        time! An adequate amount of sleep is essential while working long hours will only add to your
+                        stress. Workout a proper sleep schedule and follow it consistently. Good sleep is usually
+                        between 7-8 hours. Anything less than that may make you lethargic, moody, or may add to your
+                        weight gain.</span></p>
+                <p><span><strong>Go nuts for some nuts&nbsp;</strong>- Stock up on almonds and walnuts so you can snack
+                        on them whenever your hunger pangs are creeping up on you. They keep a check on your cholesterol
+                        and blood sugar levels.</span></p>
+                <p><span><strong>Shut down your brain&nbsp;</strong>- Meditation and Yoga are popularly known to keep a
+                        check on your stress levels. Take out 10 minutes from your daily routine to meditate and unwind
+                        from all your thoughts.</span></p>
+                <p><span>While medications might help nip the bud, a healthy lifestyle can go a long way in preventing
+                        heartwarming trends like high blood pressure, resulting in poor heart health over a period of
+                        time. So this World heart day, let’s pledge to not just follow our heart but take care of it
+                        too.</span></p>`,
+    },
+    {
+      artical: `<h2 style="text-align: center;">Grapes: How they reached India, types and health benefits</h2>
+                <p style="text-align: center;">By <span style="color: #98cb4c;">Kimaye Fruits</span></p>
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Untitled_design_51-min.png?v=1614342058" style="width: 100%; padding-bottom: 15px;">
+<p>Grapes are one of the most diverse and devoured fruits in India. Known for its sweet flavours and nutrients, grapes are hard to ignore. They come in various types and are carefully nurtured into fresh fruits, and nutritious raisins.</p>
+<p>If you too love the juicy fruit, here’s a little history and facts about the grapes</p>
+<h2><b> Grapes of India </b></h2>
+<p>The story of grapes goes way back in history. They were introduced in India by Persian invaders back in 1300 AD. Grapes are cultivated in the lush green farms across states such as Maharashtra, Karnataka, Tamil Nadu and Andhra Pradesh. Nashik in Maharashtra is known as the grape capital of India as and ranks high in grape cultivation across the world. Grapes belong to the same family, but there is a remarkable difference in their colour, size and taste.</p>
+<h2><b> What's your type? </b></h2>
+<p>Grapes are mainly categorised into two types — Table and Wine grapes — both having a unique texture, sweetness, and flavour. Table grapes are seedless and can be consumed fresh. They are also used in salads and recipes. These grapes come in various colours like green, black, red and purple. The change in colour is caused due to the production of anthocyanin which is a type of flavonoid that changes pigments. Grapes with anthocyanin can vary in colour and are rich in antioxidants. The mutation in green grapes blocks the production of anthocyanin and therefore they remain green.</p>
+<p><em>Grape Varieties:</em> Thompson Seedless and Super Sonaka Seedless are the two most widely known pale green textured grapes followed by Sharad Seedless that is black, sweet and fleshy. Crimson Seedless, Flame Seedless and Red Globe Seeded are different types of round red and crunchy grapes, with good juice content.</p>
+<p>Wine grapes are thick, crunchy, seeded, and give a sweet flavour. These types are found in different regions and are high in antioxidants.</p>
+<h2><b> Why so nutritious? </b></h2>
+<p>Grapes are highly nutritious in all its forms; be it fresh fruit, juice, wine or even dried raisins. All kinds of grapes are nutritious, rich in vitamins C and K. Their antioxidant nature may help you reduce inflammation and boost immunity. They are a perfect go-to fruit to beat the heat and can keep you healthy by providing the daily value of nutrients.</p>
+<h2><b> Not just another fresh fruit </b></h2>
+<p>Grapes are a lot more than just fresh fruit. They are crushed into fermenting wine, dried into raisins, mixed into making jams, and make a perfect topping for salads and desserts. They are diverse, and there is a lot you can try with grapes boosting your nutrition quotient. Grapes also slide well into pickles and chutneys.</p>
+<h2><b> How to pick and store grapes? </b></h2>
+<p>Grapes are to be handled carefully, unlike other specific fruits, they are only harvested once fully ripened. So, ensure you pick fully ripened grapes that are plump and free of wrinkles. Go for green grapes that have a yellowish shade if you like them sweeter. Always purchase grapes from a certified store to avoid consuming any pesticide residue. Refrigerate unwashed grapes in a clean bag to maintain freshness for a longer time. However, it is always best to consume grapes within four to five days while refrigerating with good care.</p>
+<p>Grapes can also be used as an ingredient to try out fruit recipes and desserts.</p>`,
+    },
+    {
+      artical: `<h2 style="text-align: center;">Why Should You Eat Fruits More Often?</h2>
+                <p style="text-align: center;">By <span style="color: #98cb4c;">Kimaye Fruits</span></p>
+                <p>David Thoreau once stated, “Live in each season as it passes: breathe the air, drink the drink, taste the seasonal fruit.” Rings true as, the more we tend to treat our cravings with junk and fast food items ,the more we seem to have forgotten about the goodness nature has bestowed upon us in the form of fruits. On the other hand, as we slide into the “eat healthy-stay healthy trend”, the increasing hype of Ketogenic Diet could be blamed as one of the possible reasons why we miss out on hitting the recommended daily intake of a bowl of fruits.</p>
+<p>Even though the above mentioned restraining diets are bound to worsen the quality of life instead of repairing it, a lot of people seem to get past the wonderful health <strong>benefits that fruits&nbsp;</strong>have to offer. Here, we look at the amazing <strong>benefits of fruits</strong> that we miss out on when we choose not to have them and opt for diets that affect the quality of our lives in the longer run.</p>
+<span><strong>Packed with Nutrients </strong>
+<p>This is the first <strong>benefit of fruits</strong> that should hit us if not anything else. Fruits are an excellent source of vitamins, minerals and phytonutrients that the body is in need of. Hence, having a diet that is fruitful will ensure that you have your much-needed daily supply of vitamin C, vitamin A, fiber and potassium sorted.</p>
+<span><strong>Great For Skin</strong>
+<p>Fruits are rich in antioxidants like vitamin C that are key to skincare according to Chesahna Kindred, M.D., and Dermatologist at Kindred Hair &amp; Skin Center in Maryland. No doubt, you can find vitamin C in a lot many skin care products, but it is imperative that you get it more naturally through your nutrition.</p>
+<span><strong>Help In Weight Loss</strong>
+<p>What could be a better reason to consume fruits on a daily basis if not for weight loss? Eating fruits help in making one feel full and are rich in both water and fiber content. As a matter of fact, &nbsp;as per extensive research done, the fiber present in fruits may aid in keeping you satiated, even after hours of eating them. The only thing you need to make sure is to eat lots of fruits in place of high-calorie, processed or junk food items and not in addition to them.</p>
+<span><strong>Benefits Heart Health</strong>
+<p>Fruits are the powerhouse of nutrition that help keep your cardiovascular health in check. Fruits like berries are rich in antioxidants that protect against stress and inflammation that may further cause heart diseases. Studies also suggest that including blueberries in your daily diet improves the functioning of cells that surround the blood vessels, which in turn help control blood pressure and blood clotting.</p>
+                `,
+    },
+    {
+      artical: `<h2 style="text-align: center;">Make Immunity your Best Friend</h2>
+                <p style="text-align: center;">By <span style="color: #98cb4c;">Kimaye Fruits</span></p>
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/immune_system_1728x-min.jpg?v=1614342138" style="width: 100%; padding-bottom: 15px;">
+                <h2><b>Immunity in the New Normal</b></h2>
+<p><b><span style="font-weight: 400;">The pandemic’s biggest mystery is our immune system. But, do we really understand how it functions? In simple terms, it’s your body’s </span>armour against illnesses<span style="font-weight: 400;">. The immune system also aids you to get back on your feet after an injury (quite literally). All the elements needed to keep the system up and running are carried through a river of blood and lymph. These elements reduce toxin build-up and kick out the pathogens from the body.</span> <span style="font-weight: 400;">In simple terms, our immune system works in three phases: detecting a threat, stopping the spread, and attacking in return.</span></b></p>
+<h2>
+<b>Lifestyle Changes that Are Your&nbsp;</b>Saviors</h2>
+<img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/b4.jpg" style="width: 100%; padding-bottom: 15px;">
+<p><span style="font-weight: 400;">Where does nutrition come into the picture in all of this? Everything that your body requires can be easily found in nature. Fruits and vegetables make up half of your Healthy Eating Plate, as per a study by </span><b>Harvard University</b><span style="font-weight: 400;">. While there are plenty of supplements available in the market, there’s no guarantee what will work best for you. These multivitamins and supplements come with their fair share of side effects too. Some</span><b> simple lifestyle changes</b><span style="font-weight: 400;"> that you can incorporate are exercising regularly, getting adequate sleep, and minimizing your alcohol intake. A healthy body means a healthy mind.&nbsp;&nbsp;</span></p>
+<h2><b>Importance of Nutrition for a Healthy Immune System</b></h2>
+<img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/b3.jpg" style="width: 100%; padding-bottom: 15px;">
+<p><b><span style="font-weight: 400;">A diet rich in nutrients ensures the proper functioning of your body, including the immune system. Certain dietary habits may help you fight the microbial attacks and prepare you better for other illnesses. A deficiency of vitamins can alter the immune system too. With fruits, you’re making sure you receive nature’s finest without any compromise. From achoo to ahem ahem, they can help you fight plenty of illnesses and infections.</span></b></p>
+<h2><b>Here are some of the chosen fruits that ensure you get those immunity-boosting nutrients:</b></h2>
+<h3>Citrus<b>&nbsp;Oranges</b>
+</h3>
+<img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/b5.jpg" style="width: 100%; padding-bottom: 15px;">
+<p><span style="font-weight: 400;">Oranges are said to contain the maximum amount of vitamin C among fruits. Many studies also state that oranges can provide you with 100% of your daily requirement of vitamin C. They are packed with antioxidants that prevent cell damage by fighting free radicals, lower the level of the stress hormone — cortisol, and manage your blood sugar levels too. Oranges are very hydrating as they’re made up of 87% water. Other nutrients found in oranges include potassium, folate, and fibre. We’re not saying that you should get yourself some oranges right now, but get some oranges for yourself right now.&nbsp;&nbsp;</span></p>
+<h3><b>Berry Nutritious Blueberries&nbsp;</b></h3>
+<img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/b7.jpg" style="width: 100%; padding-bottom: 15px;">
+<p><span style="font-weight: 400;">This superfood is super dense in nutrition. Blueberries are low in calories but high in vitamins C and K. They’re also called the king of antioxidant foods. Blueberries contain flavonoids, a family of polyphenol antioxidants that are known to protect your body from free radicals and contribute to healthy ageing. Several studies suggest that they reduce DNA damage and the amount of LDL or bad cholesterol in your body. Their versatility makes them easily consumable too. Blend them for a smoothie, bake them for a cookie, or just pop them frozen — they’ll always taste delicious.&nbsp;&nbsp;</span></p>
+<h3><span style="font-weight: 400;"><b>Apples: Nature’s Dose of Wellness</b></span></h3>
+<img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/b2.jpg" style="width: 100%; padding-bottom: 15px;">
+<p><span style="font-weight: 400;">Our ancestors didn’t lie when they said, “An apple a day keeps the doctor away.” They’re rich in nutrients like vitamin C, polyphenols, fibre, and potassium. Apart from being nutritious, they are yummy and loved by all. Apples also promote gut health (that’s exactly where 70% of the cells that make up the immune system reside). So, whenever you’re munching on that crunchy fruit, remember you’re doing something good for your gut. Apples also help in preserving the neurotransmitters that are involved in memory and focus.&nbsp;</span></p>
+<p><span style="font-weight: 400;">Immunity has been making headlines and there's no one way to boost it. The important factor is to constantly implement tweaks that enhance your nutrition intake. We often compromise on getting the best due to higher prices, but with changing demands, brands are starting to make sure that they provide delicious and superior-quality produce with affordability.</span></p>
+<h3><b>The Bottom Line</b></h3>
+<img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/b6.jpg" style="width: 100%; padding-bottom: 15px;">
+<p><span style="font-weight: 400;">Fruits can help you fight your way through minor inconveniences like cold, cough, and infections and aid you in resisting bigger challenges like cardiovascular health issues, cholesterol-related conditions, and problems associated with blood sugar. So, what’s your pick going to be?</span></p>
+                `,
+    },
+  ];
+  document.querySelector("#artical").innerHTML = arr[0].artical;
+  let count = 0;
+  function pagePre() {
+    count--;
+    if (count < 0) {
+      count = 3;
+    }
+    document.querySelector("#artical").innerHTML = arr[count].artical;
+  }
+  function pageNext() {
+    count++;
+    if (count > 3) {
+      count = 0;
+    }
+    document.querySelector("#artical").innerHTML = arr[count].artical;
+  }
+  let logOrNot = JSON.parse(localStorage.getItem("loginStatus")) || false;
+
+  function showSignUp() {
+    let x = document.querySelector("#signInForm");
+    x.style = "Display:block";
+    let y = document.querySelector("#logInForm");
+    y.style = "Display:none";
+  }
+  function closeLogINSignUp() {
+    let x = document.querySelector("#signInForm");
+    x.style = "Display:none";
+    let y = document.querySelector("#logInForm");
+    y.style = "Display:none";
+  }
+  function showLogIn() {
+    if (logOrNot) {
+      window.location.href = "myAccount.html";
+    } else {
+      let y = document.querySelector("#logInForm");
+      y.style = "Display:block";
+      let x = document.querySelector("#signInForm");
+      x.style = "Display:none";
+    }
+  }
+
+  let signInform = document.querySelector("#signInForm>div>form");
+  signInform.addEventListener("submit", signInFunction);
+
+  let sign_Data_Arr = JSON.parse(localStorage.getItem("signInData")) || [];
+  function checkEmail() {
+    let filtered = sign_Data_Arr.filter(function (el) {
+      return el.email == document.querySelector("#singEmail").value;
+    });
+    if (filtered.length > 0 && sign_Data_Arr.length != 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function signInFunction() {
+    event.preventDefault();
+    if (checkEmail() == true) {
+      alert("Email Already Exist");
+    } else {
+      let emailLog = document.querySelector("#singEmail").value;
+      let passwordLog = document.querySelector("#SignPass").value;
+      let nameFirst = document.querySelector("#firstName").value;
+      let nameSec = document.querySelector("#lastName").value;
+      console.log(passwordLog);
+      let obj = {
+        email: emailLog,
+        password: passwordLog,
+        firstName: nameFirst,
+        secondName: nameSec,
+      };
+      sign_Data_Arr.push(obj);
+      localStorage.setItem("signInData", JSON.stringify(sign_Data_Arr));
+    }
+  }
+
+  let logInform = document.querySelector("#logInForm>div>form");
+  logInform.addEventListener("submit", logInFunction);
+
+  function logInFunction() {
+    event.preventDefault();
+
+    let emailLog = document.querySelector("#emailId").value;
+    let passwordLog = document.querySelector("#passLog").value;
+    sign_Data_Arr.forEach(function (el, i) {
+      if (el.email == emailLog && el.password == passwordLog) {
+        alert("Login Successful\n" + "Welcome " + el.firstName);
+        logOrNot = true;
+        localStorage.setItem("loginStatus", JSON.stringify(logOrNot));
+        localStorage.setItem("loggedIdDetails", JSON.stringify(el));
+      } else {
+        alert("login Failed");
+      }
+    });
+  }
+</script>

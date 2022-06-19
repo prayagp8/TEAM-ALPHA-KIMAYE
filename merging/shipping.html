@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipping - Kimaye - Checkout</title>
+    <style>
+      body {
+        background-color: #ececec;
+      }
+
+      #outline {
+        /* border: 1px solid red; */
+        margin: auto;
+        width: 600px;
+        box-sizing: border-box;
+        padding: 20px;
+        font-family: sans-serif;
+      }
+
+      #outline > img {
+        width: 50%;
+        display: block;
+        margin: auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 10px;
+      }
+
+      #outline > div:nth-child(2) {
+        /* border: 1px solid blue; */
+        display: flex;
+        width: 48%;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #5b5a56;
+      }
+
+      #outline > div:nth-child(2) > p:nth-child(1),
+      #outline > div:nth-child(2) > p:nth-child(3) {
+        color: #d06284;
+      }
+
+      #outline > div:nth-child(3) {
+        border: 1px solid #cdcdcd;
+        border-radius: 5px;
+        margin: 15px 0px 0px 0px;
+        background-color: white;
+      }
+
+      #outline > div:nth-child(3) > div {
+        /* border: 1px solid red; */
+        margin-inline: auto;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        font-size: 15px;
+      }
+
+      #outline > div:nth-child(3) > div > p:first-child,
+      #outline > div:nth-child(4) > div > p:first-child {
+        color: #5b5a56;
+      }
+
+      #outline > div:nth-child(3) > div:nth-child(1) > p:nth-child(2) {
+        margin-left: -200px;
+      }
+
+      #outline > div:nth-child(3) > div:nth-child(3) > p:nth-child(2) {
+        margin-left: -100px;
+      }
+
+      #outline > div:nth-child(3) > div > p:last-child,
+      #outline > div:nth-child(4) > div > p:last-child {
+        color: #db4949;
+        font-size: 14px;
+      }
+
+      #outline > div:nth-child(3) > hr {
+        width: 95%;
+        opacity: 0.5;
+      }
+
+      h3 + div {
+        width: 100%;
+        border: 1px solid #cdcdcd;
+        height: 50px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0px 15px;
+        border-radius: 5px;
+      }
+
+      h3 + div > input:checked {
+        border-width: 7px;
+        border-color: #cd171f;
+      }
+
+      h3 + div > p:first-child {
+        border: 1px solid red;
+        height: 15px;
+        width: 15px;
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding-bottom: 1px;
+        color: white;
+        background-color: rgb(201, 0, 0);
+        border-radius: 50%;
+      }
+
+      h3 + div > p:nth-child(2) {
+        margin-left: -365px;
+        color: rgb(106, 106, 106);
+      }
+
+      #conToPay {
+        padding: 12px;
+        font-size: 17px;
+        color: white;
+        border: 1px solid #437111;
+        border-radius: 5px;
+        background-color: #437111;
+        margin-top: 20px;
+        margin-right: 10px;
+      }
+
+      #conToPay:hover {
+        background-color: #2b490a;
+      }
+
+      #outline > div:last-child > a {
+        text-decoration: none;
+        color: red;
+        font-size: 15px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      #footer {
+        width: 600px;
+        margin: 214px auto 10px;
+      }
+
+      #footer + div {
+        display: flex;
+        width: 600px;
+        /* border: 1px solid red; */
+        margin-inline: auto;
+      }
+
+      #footer + div > a {
+        font-size: 14px;
+        margin: 0px 20px 15px 0px;
+        color: red;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="outline">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo.png?19431"
+        alt="error"
+      />
+      <div>
+        <p>Cart</p>
+        <p>›</p>
+        <p>Information</p>
+        <p>›</p>
+        <p>Shipping</p>
+        <p>›</p>
+        <p>Payment</p>
+      </div>
+
+      <div>
+        <div>
+          <p>Contact</p>
+          <p id="userName"></p>
+          <p>Change</p>
+        </div>
+        <hr />
+        <div>
+          <p>Ship to</p>
+          <p id="address">Mumbai, 400016 Mumbai MH, India</p>
+          <p>Change</p>
+        </div>
+      </div>
+
+      <!-- Shipping method -->
+
+      <h3>Shipping method</h3>
+      <div>
+        <p>●</p>
+        <p>Free Shipping</p>
+        <p>Free</p>
+      </div>
+
+      <div>
+        <button id="conToPay">
+          <a href="payment.html">Continue to payment</a>
+        </button>
+        <a href="information.html">Return to information</a>
+      </div>
+    </div>
+
+    <hr id="footer" />
+    <div>
+      <a href="">Refund policy</a>
+      <a href="">Shipping policy</a>
+      <a href="">Privacy policy</a>
+      <a href="">Terms of services</a>
+    </div>
+  </body>
+  <script>
+    let userDetails = JSON.parse(localStorage.getItem("userName"));
+
+    let shipTo = document.querySelector("#address");
+    shipTo.innerText = userDetails.address;
+
+    let userDetail = JSON.parse(localStorage.getItem("loggedIdDetails")) || [];
+    console.log(userDetail);
+    document.querySelector("#userName").innerText = userDetail.email;
+  </script>
+</html>

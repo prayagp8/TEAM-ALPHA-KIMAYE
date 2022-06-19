@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #ecece7;
+      }
+
+      #header {
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #437111;
+        color: white;
+        font-weight: bold;
+      }
+
+      .box1 > ul {
+        display: inline-flex;
+        justify-content: flex-start;
+        list-style: none;
+      }
+
+      .box1 > ul li {
+        margin: 15px;
+      }
+
+      .box1 > ul > li:hover a {
+        color: #98cb4d;
+      }
+
+      .sub-menu {
+        display: none;
+        z-index: 1;
+      }
+
+      .box1 > ul li:hover .sub-menu {
+        display: block;
+        position: absolute;
+        background-color: white;
+      }
+
+      .box1 > ul li:hover .sub-menu ul {
+        list-style-type: none;
+        background-color: white;
+        display: block;
+      }
+
+      .box1 > ul li:hover .sub-menu ul li {
+        width: 150px;
+        background-color: white;
+        text-align: left;
+      }
+
+      .sub-menu ul li:hover {
+        transform: scale(0.9);
+
+        transition: all 0.2s ease;
+        cursor: pointer;
+        color: #437111;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      li {
+        color: black;
+        font-weight: normal;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      .box2 {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box1 {
+        width: 33%;
+        gap: 10px;
+        align-items: center;
+        list-style-type: none;
+        padding-left: 25px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .box3 {
+        width: 33%;
+        justify-content: flex-end;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        padding-right: 30px;
+        font-size: 1.2rem;
+      }
+
+      .box2 > img {
+        width: 50%;
+      }
+
+      nav {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        background-color: #eeeeea;
+      }
+
+      #heading {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        color: white;
+        background-color: #437111;
+      }
+
+      #heading > h1 {
+        text-transform: uppercase;
+        padding-top: 20px;
+      }
+
+      h1 + p > a {
+        text-decoration: none;
+        color: white;
+      }
+
+      #heading > p {
+        padding-bottom: 20px;
+      }
+
+      #info {
+        width: 70%;
+        margin: auto;
+        height: 400px;
+        display: flex;
+      }
+
+      #sidebar {
+        width: 30%;
+        height: 200px;
+        margin-left: 20px;
+      }
+
+      #data {
+        width: 65%;
+        height: 400px;
+        margin-left: 20px;
+      }
+
+      #sidebar > button {
+        display: block;
+        width: 100%;
+        height: 25%;
+        opacity: 0.4;
+      }
+      button {
+        cursor: pointer;
+      }
+      #sidebar > button:first-child {
+        background-color: black;
+        opacity: 1;
+        color: white;
+      }
+      .side {
+        text-align: left;
+        padding-left: 20px;
+        font-weight: bold;
+      }
+      #data > div {
+        width: 100%;
+        height: 60px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background-color: white;
+      }
+
+      #data > div > p {
+        padding-top: 20px;
+        font-weight: bolder;
+        font-size: 16px;
+        padding-left: 15px;
+      }
+
+      th {
+        width: 200px;
+        text-align: left;
+      }
+      #data > div:nth-child(3) > p {
+        color: green;
+        margin-bottom: 40px;
+      }
+
+      #data > div:nth-child(3) {
+        background-color: #ecece7;
+        box-shadow: none;
+        display: flex;
+        border: 1px solid green;
+        margin-top: 20px;
+        align-items: center;
+      }
+      table {
+        margin-top: 20px;
+      }
+      tr {
+        height: 40px;
+      }
+      footer {
+        background-color: #7d9c5b;
+        padding: 70px 0;
+        margin-top: 100px;
+      }
+
+      #big {
+        width: 80%;
+        margin: auto;
+        margin-top: -50px;
+      }
+
+      .footer_col > ul {
+        list-style: none;
+      }
+
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .footer_col {
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .footer_col ul li a:hover {
+        color: red;
+      }
+
+      #socialMedia > a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        margin: 0 10px 10px 0;
+        line-height: 40px;
+        border-radius: 50%;
+      }
+      #socialMedia {
+        margin-right: 200px;
+      }
+      i {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+        line-height: 20px;
+        font-weight: 600;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+      }
+      .copyright {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .copyright > img {
+        width: 10%;
+        height: 10%;
+        margin-top: 15px;
+      }
+
+      .copyright > p {
+        font-weight: lighter;
+      }
+      hr {
+        opacity: 0.3;
+      }
+      #data > #greeting > p {
+        font-weight: lighter;
+      }
+      #data > #greeting > p > span:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">Delivering in Mumbai and Delhi | Same day delivery!</div>
+    <nav>
+      <div class="navbar">
+        <div class="box1">
+          <ul>
+            <li>
+              shop
+              <div class="sub-menu">
+                <ul>
+                  <a href="allFruits.html"><li>ALL FRUITS</li></a>
+                  <a href="freshCut.html"><li>FRESH CUTS</li></a>
+                  <a href="fruitCombo.html"><li>FRUIT COMBOS</li></a>
+                  <a href="gift_by_kimaye.html"><li>GIFT BY KIMAYE</li></a>
+                  <a href="grapes.html"><li>GRAPES FAMILY BY KIMAYE</li></a>
+                  <li>RETURN AND REPLACEMENT</li>
+                  <a href="communityPage.html"><li>COMMUNITY BUYING</li></a>
+                </ul>
+              </div>
+            </li>
+            <li>
+              learn
+              <div class="sub-menu">
+                <ul>
+                  <a href="our_story.html"><li>OUR STORY</li></a>
+                  <a href="why_kimaye.html"><li>WHY KIMAYE</li></a>
+                  <a href="traceability.html"><li>TRACEABILITY</li></a>
+                  <a href="Beyond_fruits.html"><li>BEYOND FRUITS</li></a>
+                </ul>
+              </div>
+            </li>
+            <a href="grow.html"><li>GROW</li></a>
+          </ul>
+        </div>
+        <div class="box2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+            alt=""
+          />
+        </div>
+        <div class="box3">
+          <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+          <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div><a href="myAccount.html"><i class="fa-solid fa-user"></i></a></i></div>
+                <div><a href="cartcheckout.html"><i class="fa-solid fa-cart-arrow-down"></i></a></div>
+        </div>
+      </div>
+    </nav>
+    <div id="heading">
+      <h1>my account</h1>
+      <p>
+        <a href=""><i class="fa fa-home"></i>Home /</a> My Account
+      </p>
+    </div>
+    <div id="info">
+      <div id="sidebar">
+        <button>
+          <h2>MY ACCOUNT</h2>
+        </button>
+        <button><p class="side">DASHBOARD</p></button>
+        <button><p class="side">ADDRESSES(1)</p></button>
+        <button onclick="logOutUser()"><p class="side">LOG OUT</p></button>
+      </div>
+      <div id="data">
+        <div id="greeting">
+          <!-- append greeting data here -->
+        </div>
+        <div>
+          <p>Order History :</p>
+        </div>
+        <div>
+          <p>&#10003; No order has been made yet.</p>
+        </div>
+        <div>
+          <p>Account details :</p>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <th>Name:</th>
+              <td id="nameShow"></td>
+              <!-- append name coloumn here -->
+            </tr>
+            <tr>
+              <th>E-mail:</th>
+              <td id="emialShow"></td>
+              <!-- append email coloumn here -->
+            </tr>
+            <tr>
+              <th>Address:</th>
+              <!-- append Address coloumn here -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <div id="big">
+        <div id="container">
+          <div class="footer_col">
+            <ul>
+              <li><a href="">FAQ's</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">Shipping & Return policy</a></li>
+              <li><a href="">Terms & Conditions</a></li>
+              <li><a href="">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer_col">
+            <ul>
+              <li><a href="">Follow us on</a></li>
+              <div id="socialMedia">
+                <a href="#"
+                  ><img
+                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                    alt=""
+                /></a>
+                <a href="#"
+                  ><img
+                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                    alt=""
+                /></a>
+                <a href="#"
+                  ><img
+                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                    alt=""
+                /></a>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="copyright">
+          <p>copyright2020 All rights reserved</p>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040"
+            alt=""
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script>
+  let userDetails = JSON.parse(localStorage.getItem("loggedIdDetails")) || [];
+  console.log(userDetails);
+  document.querySelector(
+    "#greeting"
+  ).innerHTML = `<p>Hello <strong>${userDetails.firstName} ${userDetails.secondName}</strong>(Not <strong>${userDetails.firstName} ${userDetails.secondName}</strong>? <span onclick="logOutUser()"> Sign Out</span>)</p>`;
+  document.querySelector("#nameShow").innerText =
+    userDetails.firstName + " " + userDetails.secondName;
+  document.querySelector("#emialShow").innerText = userDetails.email;
+
+  let logOrNot = JSON.parse(localStorage.getItem("loginStatus")) || false;
+  function logOutUser() {
+    logOrNot = false;
+    localStorage.setItem("loginStatus", JSON.stringify(logOrNot));
+    window.location.href = "index.html";
+  }
+</script>

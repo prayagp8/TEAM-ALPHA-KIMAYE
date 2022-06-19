@@ -46,6 +46,9 @@ header>p{
 .box1>ul>li:hover a{
  color:#98cb4d
 }
+a>li{
+  color: black;
+}
 .sub-menu{
 display: none;
 z-index: 1;
@@ -77,6 +80,11 @@ z-index: 1;
 
   transition: all 0.2s ease;
   cursor:pointer;
+  color: #437111;
+}
+a{
+  text-decoration: none;
+  color: black;
 }
 .navbar {
 
@@ -771,3 +779,145 @@ footer>div>div>p{
     }
 
         }
+
+
+        /* side bar */
+
+            /* side-bar */
+
+    .side-bar{
+      height: 100%;
+      border: 1px solid black;
+      position: fixed;
+      /* background-color: #ffffff; */
+      right: 0px;
+      top: 0px;
+      width: 370px;
+      z-index:10;
+      text-transform: capitalize;
+      display: none;
+      overflow: auto;
+    }
+    .side-bar>div{
+      padding:10px;
+      /* background-color:white; */
+  
+    }
+    .btn_checkout>button:first-child{
+      padding: 8px 30%;
+      margin: 5%;
+      border: none;
+      background:rgba(128, 128, 128, 0.277);
+      text-transform: uppercase;
+    }
+    .btn_checkout>button:last-child{
+      padding: 8px 20%;
+      margin: 5%;
+      border: none;
+      background:rgba(128, 128, 128, 0.277);
+      text-transform: uppercase;
+      
+    }
+    
+
+  
+    
+    #tax{
+      font-size:15px
+    }
+    .side-bar>div:first-child{
+      background-color:black;
+      display:flex;
+      gap: 15px;
+      justify-content: space-around;
+  
+    }
+    .side-bar>div:first-child>p{
+      background-color:black;
+      color: white;
+      text-transform: uppercase;
+      font-size: 22px;
+      padding:15px;
+    }
+     tbody>tr>button{
+      /* background-color:white; */
+      /* border: 1px solid black; */
+      border: none;
+      /* background-color:white; */
+      padding:5px 8px;
+      border-radius:5px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+    tbody>tr>td>p{
+      font-size:15px
+    }
+    tbody>tr>td>small{
+      color: black;
+    }
+    /* tbody>tr>button:hover{
+      background-color:red
+    } */
+    .side-bar>div:first-child>button{
+      background-color:black;
+      color: white;
+    }
+    .side-bar>div:first-child>button:hover{
+      color: red
+    }
+    .side-bar>div+div{
+      padding:25px;
+      color: grey;
+      /* background-color: white; */
+      
+    }
+    .subtotal{
+      display:flex;
+      justify-content:space-between;
+      margin-right:10px;
+      border-top: 1px solid rgba(128, 128, 128, 0.275);
+      border-bottom: 1px solid rgba(128, 128, 128, 0.275);
+      
+    }
+
+
+    /* percentage bar */
+    .progress-bar{
+      background:rgba(128, 128, 128, 0.277);
+      width: 300px;
+      height: 30px;
+      border-radius:10px;
+  
+  }
+  .progress-bar >div{
+      height: 30px;
+      width: 80px;
+      background: rgb(228,24,22);
+background: radial-gradient(circle, rgba(228,24,22,1) 37%, rgba(241,216,169,0.8748541652989321) 100%);
+      border-radius:10px;
+  }
+  .progress-bar >div>span{
+      height: 45px;
+      width: 40px;
+      border-radius:10%;
+      float: right;
+      background:white;
+      display: flex;
+      align-items: center;
+      margin-top:-10px;
+      margin-right: -20px;
+      justify-content: center;
+      
+  
+  }
+  .free_shipping{
+    margin-top: 30px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius:5px;
+    font-size:15px;
+  }
+  #imgproduct{
+    width: 120px;
+  }

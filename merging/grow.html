@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grow</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      #signInForm {
+        width: 23%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+        background-color: white;
+        padding-bottom: 20px;
+        border: 1px solid;
+        z-index: 2;
+      }
+      #signInForm > div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+        padding: 20px 10px;
+        margin-bottom: 10px;
+      }
+      #signInForm > div:nth-child(1) > button {
+        background-color: black;
+        color: white;
+      }
+      #signInForm > div:nth-child(2) > img {
+        width: 100%;
+      }
+      #signInForm > div:nth-child(3) {
+        width: 90%;
+        margin: 10px auto;
+      }
+      #signInForm > div:nth-child(3) input {
+        width: 100%;
+        margin: 10px 0;
+        height: 40px;
+      }
+      #signInForm > div:nth-child(3) input + button {
+        width: 102%;
+        padding: 10px 0;
+      }
+      #signInForm > div:nth-child(4) button {
+        padding: 10px 20px;
+        margin: auto 50%;
+      }
+      #signInForm > div:nth-child(4) img {
+        width: 100%;
+      }
+      #signInForm button:hover {
+        cursor: pointer;
+      }
+      #logInForm {
+        width: 23%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+        background-color: white;
+        padding-bottom: 20px;
+        border: 1px solid;
+        z-index: 2;
+      }
+      #logInForm > div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+        padding: 20px 10px;
+        margin-bottom: 10px;
+      }
+      #logInForm > div:nth-child(1) > button {
+        background-color: black;
+        color: white;
+      }
+      #logInForm > div:nth-child(3) > img {
+        width: 100%;
+      }
+      #logInForm > div:nth-child(2) {
+        width: 90%;
+        margin: 10px auto;
+      }
+      #logInForm > div:nth-child(2) input {
+        width: 100%;
+        margin: 10px 0;
+        height: 40px;
+      }
+      #logInForm > div:nth-child(2) p + button {
+        width: 102%;
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+      #logInForm > div:nth-child(4) button {
+        width: 40%;
+        padding: 10px 5px;
+        margin: auto 35%;
+      }
+      #logInForm > div:nth-child(4) img {
+        width: 100%;
+      }
+      #logInForm button:hover {
+        cursor: pointer;
+      }
+      #logInForm > div:nth-child(2) p:hover {
+        color: #98cb4c;
+        cursor: pointer;
+      }
+      #logInForm > div:nth-child(2) p > img {
+        width: 5%;
+      }
+      header {
+        display: flex;
+
+        background-color: #437111;
+        color: white;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+      }
+      header > p {
+        background-color: #437111;
+      }
+
+      .box1 > ul {
+        display: inline-flex;
+        justify-content: flex-start;
+        list-style: none;
+      }
+      .box1 > ul li {
+        margin: 15px;
+      }
+
+      .box1 > ul > li:hover a {
+        color: #98cb4d;
+        cursor: pointer;
+      }
+      .sub-menu {
+        display: none;
+        z-index: 1;
+      }
+      .box1 > ul li:hover .sub-menu {
+        display: block;
+        position: absolute;
+        background-color: white;
+      }
+      .box1 > ul li:hover .sub-menu ul {
+        list-style-type: none;
+        background-color: white;
+        display: block;
+      }
+      .box1 > ul li:hover .sub-menu ul li {
+        width: 150px;
+        background-color: white;
+        text-align: left;
+      }
+      .sub-menu ul li:hover {
+        transform: scale(0.9);
+
+        transition: all 0.2s ease;
+        cursor: pointer;
+        color: #437111;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      li {
+        color: black;
+      }
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+      .box2 {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box1 {
+        width: 33%;
+        gap: 10px;
+        align-items: center;
+        list-style-type: none;
+        padding-left: 25px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+      .box3 {
+        width: 33%;
+        justify-content: flex-end;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        padding-right: 30px;
+        font-size: 1.2rem;
+      }
+      .box2 > img {
+        width: 50%;
+      }
+
+      nav {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        background-color: #eeeeea;
+      }
+      #conti {
+        display: flex;
+        width: 90%;
+        justify-content: space-evenly;
+        margin: auto;
+      }
+      #conti > #data {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
+        width: 65%;
+        gap: 25px;
+      }
+      #conti > #data > div {
+        text-align: center;
+        padding: 15px;
+        line-height: 25px;
+        overflow: hidden;
+      }
+      #conti > #data > div > img {
+        width: 100%;
+        border-radius: 20px;
+        transition: transform 0.2s;
+      }
+      #conti > #data > div > img:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+        width: 100%;
+      }
+      #conti > #data > div > .date {
+        background-color: white;
+        width: 5%;
+        height: 7%;
+        line-height: 25px;
+        border-radius: 10px;
+        margin: 1%;
+      }
+      #conti > #data > div > button {
+        background-color: white;
+        border: transparent;
+        text-decoration: underline;
+      }
+      #conti > #data > div > button:hover {
+        font-weight: bolder;
+        cursor: pointer;
+      }
+      #post > div {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: auto;
+        border-bottom: 1px solid gray;
+      }
+      #post > div > p:last-child {
+        color: grey;
+      }
+      #post {
+        width: 30%;
+        padding: 20px;
+        line-height: 20px;
+      }
+      #post > * {
+        margin-top: 20px;
+      }
+      #conti > #post > form {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      #conti > #post > form > input {
+        padding: 5px;
+        border: 1px thin;
+      }
+      #conti > #post > form > button {
+        padding: 7px;
+        background-color: #98cb4c;
+        border: transparent;
+      }
+      #banner {
+        width: 100%;
+        height: 500px;
+      }
+      #banner > img {
+        width: 100%;
+        height: 500px;
+      }
+      #green {
+        background-color: #437111;
+        padding: 15px;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+      }
+      #green > h4 > span {
+        margin-left: 1%;
+      }
+      #green > h4 > span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      #green > p > span:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      body > button {
+        width: 2%;
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
+      body > #btn1 {
+        margin-left: 45%;
+        margin-right: 4px;
+        background-color: black;
+        color: white;
+      }
+      #footer {
+        background-color: #7d9c5b;
+      }
+      #footer > div {
+        /* border: 1px solid red; */
+        width: 80%;
+        margin: auto;
+        background-color: #7d9c5b;
+      }
+
+      #footer > div > div:first-child {
+        width: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+
+        background-color: transparent;
+      }
+      #footer > div > div > div:first-child {
+        /* border: 1px solid blue; */
+        font-size: 20px;
+        line-height: 30px;
+        background-color: #7d9c5b;
+      }
+
+      #footer > div > div > div:last-child {
+        /* border: 1px solid red; */
+        height: 200px;
+        width: 200px;
+        margin-left: 700px;
+        background-color: #7d9c5b;
+        font-size: 20px;
+      }
+      #footer > div > div > div:last-child > div {
+        display: flex;
+        height: 58px;
+        gap: 10px;
+        background-color: #7d9c5b;
+      }
+      #footer > div > div:last-child {
+        /* border: 1px solid blue; */
+        width: 100%;
+        height: 100px;
+
+        background-color: #7d9c5b;
+      }
+      #footer h3 {
+        background-color: #7d9c5b;
+      }
+      #footer h3 + img {
+        background-color: #7d9c5b;
+        width: 120px;
+        height: 30px;
+      }
+      #footer hr {
+        height: 1px;
+        background-color: black;
+        border: none;
+      }
+      #footer hr + div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        background-color: #7d9c5b;
+      }
+
+      #footer .social_icon img {
+        background-color: #7d9c5b;
+      }
+      body {
+        background-image: url(https://cdn.shopify.com/s/files/1/0449/5225/6667/files/jazz-bg-texture-min_1.jpg?v=1616673456);
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+      }
+      a:hover {
+        color: #98cb4d;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <p>Deliviring in mubaai and delhi | same day delivery</p>
+    </header>
+    <div id="signInForm">
+      <div>
+        <h1>SIGN IN</h1>
+        <button onclick="closeLogINSignUp()">CLOSE X</button>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cjNy.jpg" alt="" />
+        <img src="https://i.im.ge/2022/06/17/r4cyMK.jpg" alt="" />
+      </div>
+      <div>
+        <form action="">
+          <label for="name">First Name</label>
+          <input type="name" id="firstName" />
+          <label for="name">Last Name</label>
+          <input type="name" id="lastName" />
+          <label for="">Email Address</label>
+          <input type="email" id="singEmail" />
+          <label for="Password">Password</label>
+          <input type="password" id="SignPass" />
+          <button>REGISTER</button>
+        </form>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cCxX.jpg" alt="" />
+        <button onclick="showLogIn()">LOGIN</button>
+      </div>
+    </div>
+
+    <div id="logInForm">
+      <div>
+        <h1>SIGN IN</h1>
+        <button onclick="closeLogINSignUp()">CLOSE X</button>
+      </div>
+      <div>
+        <form id="formLogin" action="">
+          <label for="">Email Address</label>
+          <input type="email" id="emailId" />
+          <label for="Password">Password</label>
+          <input type="password" id="passLog" />
+          <p>
+            <img
+              src="https://cdn0.iconfinder.com/data/icons/seo-line-25/48/logo_google_marketing_platform-512.png"
+              alt=""
+            />
+            Forgot your password?
+          </p>
+          <button>LOGIN</button>
+        </form>
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cjNy.jpg" alt="" />
+        <img src="https://i.im.ge/2022/06/17/r4cyMK.jpg" alt="" />
+      </div>
+      <div>
+        <img src="https://i.im.ge/2022/06/17/r4cCxX.jpg" alt="" />
+        <button onclick="showSignUp()">Create An Account</button>
+      </div>
+    </div>
+    <nav>
+      <div class="navbar">
+        <div class="box1">
+          <ul>
+            <li>
+              shop
+              <div class="sub-menu">
+                <ul>
+                  <a href="allFruits.html"><li>ALL FRUITS</li></a>
+                  <a href="freshCut.html"><li>FRESH CUTS</li></a>
+                  <a href="fruitCombo.html"><li>FRUIT COMBOS</li></a>
+                  <a href="gift_by_kimaye.html"><li>GIFT BY KIMAYE</li></a>
+                  <a href="grapes.html"><li>GRAPES FAMILY BY KIMAYE</li></a>
+                  <li>RETURN AND REPLACEMENT</li>
+                  <a href="communityPage.html"><li>COMMUNITY BUYING</li></a>
+                </ul>
+              </div>
+            </li>
+            <li>
+              learn
+              <div class="sub-menu">
+                <ul>
+                  <a href="our_story.html"><li>OUR STORY</li></a>
+                  <a href="why_kimaye.html"><li>WHY KIMAYE</li></a>
+                  <a href="traceability.html"><li>TRACEABILITY</li></a>
+                  <a href="Beyond_fruits.html"><li>BEYOND FRUITS</li></a>
+                </ul>
+              </div>
+            </li>
+            <a href="grow.html"><li>GROW</li></a>
+          </ul>
+        </div>
+        <div class="box2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+            alt=""
+          />
+        </div>
+        <div class="box3">
+          <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+          <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div onclick="showLogIn()">
+            <a href="#"></a><i class="fa-solid fa-user"></i>
+          </div>
+          <div><a href="cartcheckout.html"><i class="fa-solid fa-cart-arrow-down"></i></a></div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="banner">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/grow_by_kimaye.jpg?v=1609401696"
+        alt=""
+      />
+    </div>
+    <div id="green">
+      <h1>GROW WITH KIMAYE</h1>
+      <p><span>Home </span> / Archive by Category "Grow with Kimaye"</p>
+      <h4>
+        <span>NUTRITION</span> <span>LIFESTYLEMANAGEMENT</span>
+        <span>CHILD'S NUTRITION</span> <span>STORAGE & HANDLING</span>
+      </h4>
+    </div>
+    <div id="conti">
+      <div id="data"></div>
+      <div id="post">
+        <h3>SEARCH</h3>
+        <form action="">
+          <input type="search" placeholder="Search for post" />
+          <button>SEARCH</button>
+        </form>
+        <h3>CATEGORIES</h3>
+        <p>
+          Pick a link list to show here in your under Blog sidebar > Quick links
+          link list.
+        </p>
+        <h3>RECENT POST</h3>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_334275008-2-opt2-1900px_70x_crop_center.progressive.jpg?v=1627119119"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >TOP FRUIT SAFETY TIPS YOU SHOULD BE SWEARING BY EVERY TIME YOU
+              CONSUME THEM .</a
+            >
+          </p>
+          <p>Jul 24, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_201343750_copy__66kb-1000px_70x_crop_center.progressive.jpg?v=1626676701"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >FRUITS RICH IN VITAMIN C THAT YOU SHOULD BE EATING EVERYDAY</a
+            >
+          </p>
+          <p>Jul 19, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_77286816-min__1625567830_114.143.85.97_70x_crop_center.progressive.jpg?v=1625638895"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >HOW TO REMOVE AND CLEAN HARMFUL PESTICIDES FROM FRUITS</a
+            >
+          </p>
+          <p>Jul 07, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/Blog_-_Benefits_of_fruits_70x_crop_center.progressive.jpg?v=1625147388"
+          />
+          <p>
+            <a href="innerGrow.html">WHY SHOULD YOU EAT FRUITS MORE OFTEN?</a>
+          </p>
+          <p>Jul 01, 2021</p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/Untitled_design_51-min_70x_crop_center.png?v=1614341965"
+          />
+          <p>
+            <a href="innerGrow.html"
+              >GRAPES: HOW THEY REACHED INDIA, TYPES AND HEALTH BENEFITS</a
+            >
+          </p>
+          <p>Feb 12, 2021</p>
+        </div>
+      </div>
+    </div>
+    <button id="btn1" onclick="page1()">1</button
+    ><button onclick="page2()">2</button>
+
+    <div id="footer">
+      <div>
+        <div>
+          <div>
+            <h3>FAQ's</h3>
+            <h3>Contact Us</h3>
+            <h3>Shipping & Return Policy</h3>
+            <h3>Terms & Conditions</h3>
+            <h3>Privacy Policy</h3>
+          </div>
+
+          <div>
+            <h3>Follow us on</h3>
+            <div class="social_icon">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                alt="facebook"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                alt="instagram"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                alt="twitter"
+              />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <div>
+          <h3>Copyright©2020. All Rights Reserved</h3>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/ting.png?v=1599565040"
+            alt="ting"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let arr = [
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_334275008-2-opt2-1900px_540x.jpg?v=1627119119",
+      head: "Top Fruit Safety Tips You Should Be Swearing By Every Time You Consume Them .",
+      read: "Fresh fruits bring with them a horde of health benefits, but its the way we consume them that is more important. While fruits have the ability to prevent many diseases such as cancer, heart stroke",
+      readmore: "",
+      date: "<h2>24</h2><p>JUL</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_201343750_copy__66kb-1000px_900x.jpg?v=1626676701",
+      head: "Fruits Rich In Vitamin C That You Should Be Eating Everyday",
+      read: "Remember the times when our mothers used to chase us every day with a bowl of fruits when we were kids. Well, she had pretty good reasons behind doing the same. Fruits, especially the ones...",
+      readmore: "",
+      date: "<h2>19</h2><p>JUL</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/AdobeStock_77286816-min__1625567830_114.143.85.97_900x.jpg?v=1625638895",
+      head: "How To Remove And Clean Harmful Pesticides From Fruits",
+      read: "Summers have arrived and so have the days where we can soak ourselves in the pleasure of treating ourselves to delicious fruits like mangoes, water melons, grapes and so on. After all, aside of helping...",
+      readmore: "",
+      date: "<h2>07</h2><p>JUL</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/Blog_-_Benefits_of_fruits_900x.jpg?v=1625147388",
+      head: "Why Should You Eat Fruits More Often?",
+      read: "David Thoreau once stated, “Live in each season as it passes: breathe the air, drink the drink, taste the seasonal fruit.” Rings true as, the more we tend to treat our cravings with junk and...",
+      readmore: "",
+      date: "<h2>01</h2><p>JUL</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/Untitled_design_51-min_900x.png?v=1614341965",
+      head: "Grapes: How they reached India, types and health benefits",
+      read: "Grapes are one of the most diverse and devoured fruits in India. Known for its sweet flavours and nutrients, grapes are hard to ignore. They come in various types and are carefully nurtured into fresh...",
+      readmore: "",
+      date: "<h2>12</h2><p>FEB</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/immune_system_1728x-min_540x.jpg?v=1614342193",
+      head: "Make Immunity your Best Friend",
+      read: "Immunity in the New Normal The pandemic’s biggest mystery is our immune system. But, do we really understand how it functions? In simple terms, it’s your body’s armour against illnesses. The immune system also aids...",
+      readmore: "",
+      date: "<h2>10</h2><p>NOV</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/pomegranate-min_540x.jpg?v=1614342435",
+      head: `Nourish yourself with these 'fruitful' nutrients`,
+      read: "Fresh fruits bring with them a horde of health benefits, but its the way we consume them that is more important. While fruits have the ability to prevent many diseases such as cancer, heart stroke",
+      readmore: "",
+      date: "<h2>05</h2><p>OCT</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/healthy_heart-min_540x.jpg?v=1614342271",
+      head: "Healthy at Heart",
+      read: "September 28, 2020 (IANSlife) This World Heart Day, let’s have a light-hearted conversation about the importance of having a healthy heart and how one should take care of it.  Being aware of cardiovascular diseases and measures...",
+      readmore: "",
+      date: "<h2>28</h2><p>SEP</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/craving_blog-min_540x.jpg?v=1614342502",
+      head: "Craving for Something Delicious During the Lockdown? We Got You!",
+      read: "We know that you’ve been spending your time working from home and being committed to your fitness goals. But, what about those cravings that sneak up on you once in a while? Well, we are...",
+      readmore: "",
+      date: "<h2>14</h2><p>AUG</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/pomegranate-1-min_540x.jpg?v=1614342545",
+      head: "A fruitful monsoon diet",
+      read: "August 3, 2020 (IANSlife) Monsoon demands some extra effort to stay fit and healthy. Since our immunity takes a dip during monsoons, making us susceptible to all kinds of infections. Especially amidst the Coronavirus pandemic, it’s...",
+      readmore: "",
+      date: "<h2>03</h2><p>AUG</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/consume_fruits-min_540x.jpg?v=1614598062",
+      head: "Do fruits have a time table",
+      read: "The right time to consume fruits Fruits are known to be an essential source of vitamins and minerals, and an excellent way to improve your overall health. Not just that, if you keep on consuming...",
+      readmore: "",
+      date: "<h2>08</h2><p>JUN</p>",
+    },
+    {
+      img: "https://cdn.shopify.com/s/files/1/0449/5225/6667/articles/working_out_at_home-min_540x.jpg?v=1614598096",
+      head: "Meet your health goals during the lockdown",
+      read: 'May 17, 2020 (IANSlife) "Work from Home" during quarantine has changed our lifestyles; keeping a check on nutrition can be tough when our home is our office.   Unlike at the office, here we have plenty of packed...',
+      readmore: "",
+      date: "<h2>17</h2><p>MAY</p>",
+    },
+  ];
+
+  localStorage.setItem("growData", JSON.stringify(arr));
+
+  arr.forEach(function (el, index) {
+    let div = document.createElement("div");
+    let image = document.createElement("img");
+    image.addEventListener("click", function () {
+      btnOfReadMore(index);
+    });
+    image.setAttribute("src", el.img);
+    let h1 = document.createElement("h3");
+    h1.innerText = el.head;
+    let p = document.createElement("p");
+    p.innerText = el.read;
+    let btn = document.createElement("button");
+    btn.innerText = "ReadMore";
+    btn.addEventListener("click", function () {
+      btnOfReadMore(index);
+    });
+    let hr = document.createElement("hr");
+    hr.style = "margin-top:10px";
+    let smallDiv = document.createElement("div");
+    smallDiv.style.position = "absolute";
+    smallDiv.innerHTML = el.date;
+    smallDiv.setAttribute("class", "date");
+    div.append(smallDiv, image, h1, p, btn, hr);
+    document.querySelector("#data").append(div);
+  });
+
+  function page1() {
+    window.location.href = "grow.html";
+  }
+  function page2() {
+    window.location.href = "grow2.html";
+  }
+  function btnOfReadMore(index) {
+    window.location.href = "innerGrow.html";
+  }
+
+  let logOrNot = JSON.parse(localStorage.getItem("loginStatus")) || 0;
+
+  function showSignUp() {
+    let x = document.querySelector("#signInForm");
+    x.style = "Display:block";
+    let y = document.querySelector("#logInForm");
+    y.style = "Display:none";
+  }
+  function closeLogINSignUp() {
+    let x = document.querySelector("#signInForm");
+    x.style = "Display:none";
+    let y = document.querySelector("#logInForm");
+    y.style = "Display:none";
+  }
+  function showLogIn() {
+    if (logOrNot > 0) {
+      window.location.href = "myAccount.html";
+    } else {
+      let y = document.querySelector("#logInForm");
+      y.style = "Display:block";
+      let x = document.querySelector("#signInForm");
+      x.style = "Display:none";
+    }
+  }
+
+  let signInform = document.querySelector("#signInForm>div>form");
+  signInform.addEventListener("submit", signInFunction);
+
+  let sign_Data_Arr = JSON.parse(localStorage.getItem("signInData")) || [];
+  function checkEmail() {
+    let filtered = sign_Data_Arr.filter(function (el) {
+      return el.email == document.querySelector("#singEmail").value;
+    });
+    if (filtered.length > 0 && sign_Data_Arr.length != 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function signInFunction() {
+    event.preventDefault();
+    if (checkEmail() == true) {
+      alert("Email Already Exist");
+    } else {
+      let emailLog = document.querySelector("#singEmail").value;
+      let passwordLog = document.querySelector("#SignPass").value;
+      let nameFirst = document.querySelector("#firstName").value;
+      let nameSec = document.querySelector("#lastName").value;
+      console.log(passwordLog);
+      let obj = {
+        email: emailLog,
+        password: passwordLog,
+        firstName: nameFirst,
+        secondName: nameSec,
+      };
+      sign_Data_Arr.push(obj);
+      localStorage.setItem("signInData", JSON.stringify(sign_Data_Arr));
+    }
+  }
+
+  let logInform = document.querySelector("#logInForm>div>form");
+  logInform.addEventListener("submit", logInFunction);
+
+  function logInFunction() {
+    event.preventDefault();
+
+    let emailLog = document.querySelector("#emailId").value;
+    let passwordLog = document.querySelector("#passLog").value;
+    sign_Data_Arr.forEach(function (el, i) {
+      if (el.email == emailLog && el.password == passwordLog) {
+        alert("Login Successful\n" + "Welcome " + el.firstName);
+        logOrNot++;
+        localStorage.setItem("loginStatus", JSON.stringify(logOrNot));
+        localStorage.setItem("loggedIdDetails", JSON.stringify(el));
+      } else {
+        alert("login Failed");
+      }
+    });
+  }
+</script>

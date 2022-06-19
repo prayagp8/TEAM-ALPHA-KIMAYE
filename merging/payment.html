@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>payment</title>
+  </head>
+  <style>
+    body{
+      /* background-color: rgba(128, 128, 128, 0.278); */
+      background-color: rgba(9, 35, 128, 0.597);
+    }
+    .container {
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+      margin-top: 100px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      width: 30%;
+      padding-bottom: 40px;
+      border-radius: 20px;
+      background-color: whitesmoke;
+      margin-top: 0px;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    #payment {
+      text-align: left;
+    }
+    input[type="text"],input[type="password"],input[type="date"],input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    input[type="submit"]{
+        background-color:grey;
+        border: none;
+        padding:8px 15px;
+        display: block;
+        margin: 0 auto;
+        color: white;
+    }
+    body>div:first-child{
+      padding: 20px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+  
+   }
+   img{
+    width: 31%;
+    height: 180px;
+    border-radius: 25px;
+   }
+  </style>
+  <body>
+    <div>
+      <!-- <img src="https://th.bing.com/th/id/R.506e1ba5b3f26aa42b8d91843dd1746b?rik=%2fJ3cqpOCzQ5%2bLw&riu=http%3a%2f%2fwww.forestfarmshop.com%2findex_htm_files%2f947.jpg&ehk=gJD4HHSpefuPxyua%2fyPtvyv4fTMuY8BJrqe9W2f%2f4bU%3d&risl=&pid=ImgRaw&r=0" alt=""> -->
+    <img src="https://www.j2konline.com/image/payu_payment_icon.jpg" alt="">
+    </div>
+    <div class="container">
+      <div class="box">
+        <h2>PAYMENT</h2>
+        <form id="payment">
+          <label for="">Name</label>
+          <br />
+          <input type="text" id="name" placeholder="enter your name" />
+          <br />
+          <label>Card Number</label>
+          <br />
+          <input type="number" id="cardNumber" placeholder="Enter cardNumber" />
+          <br />
+          <label>CVV</label>
+          <br />
+          <input type="password" id="cvv" placeholder="Enter cvv" />
+          <br />
+          <label for="">Date</label>
+          <input type="date" />
+          <br />
+          <br />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", formData)
+
+    // let formArr =[]
+
+
+    function formData(event) {
+        event.preventDefault();
+        
+
+        let formObj={
+        name:document.getElementById("name").value,    
+        cardNumber:document.getElementById("cardNumber").value,
+        cvv:document.getElementById("cvv").value
+        }
+
+        if(formObj.name==""){
+            alert("Please enter name!");
+        }else if(formObj.cardNumber==""){
+            alert("Please enter cardNumber!");
+        }else if(formObj.cvv==""){
+            alert("Please enter valid cvv!");
+        }
+
+        if(formObj.cardNumber=="12345678" && formObj.cvv =="123"){
+            window.location.href="otp.html"
+        }else{
+            alert("error");
+
+        }
+
+        // formArr.push(formObj)
+        // localStorage.setItem("formArr",JSON.stringify(formArr))
+     }
+   
+</script>

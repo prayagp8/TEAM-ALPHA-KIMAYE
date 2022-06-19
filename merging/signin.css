@@ -23,6 +23,9 @@
     margin-bottom: 10px;
 
 }
+body>#signInForm>div:first-child h1{
+    background-color: black;
+}
 #signInForm>div:nth-child(1)>button{
     background-color: black;
     color: white;
