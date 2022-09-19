@@ -30,7 +30,7 @@ _________________________________________________________________________
 ## Product Page 
 _________________________________________________________________________
 
-<a href="https://im.ge/i/1sJO1J"><img src="https://i.im.ge/2022/09/20/1sJO1J.a2.md.png" alt="a1" border="0" /></a>
+<a href="https://im.ge/i/1sJO1J"><img src="https://i.im.ge/2022/09/20/1sJO1J.a2.md.png" alt="a1" border="0" width="100%"/></a>
 
 
 ### From navbar of landing you and go for any of the product pages of fruits and other product offer by kimaye .
@@ -40,7 +40,7 @@ _________________________________________________________________________
 ## Dynamic Waitimg list toggle menu.
 _________________________________________________________________________
 
-<a href="https://im.ge/i/1sJupa"><img src="https://i.im.ge/2022/09/20/1sJupa.a3.png" alt="a4" border="0" /></a>
+<a href="https://im.ge/i/1sJupa"><img src="https://i.im.ge/2022/09/20/1sJupa.a3.png" alt="a4" width="100%" border="0" /></a>
 
 
 ### here if you add to cart any of the product it will added to shopping cart and which shows gross sum and checkout window .
@@ -49,11 +49,11 @@ _________________________________________________________________________
 ## Checkout Page
 _________________________________________________________________________
 
-<a href="https://im.ge/i/1sJrAx"><img src="https://i.im.ge/2022/09/20/1sJrAx.a4.png" alt="a1" border="0" /></a>
+<a href="https://im.ge/i/1sJrAx"><img src="https://i.im.ge/2022/09/20/1sJrAx.a4.png" alt="a1" width="100%" border="0" /></a>
 
 ### Address page for online orders of users
 
-<a href="https://im.ge/i/1sJ1wy"><img src="https://i.im.ge/2022/09/20/1sJ1wy.a6.png" alt="a4" border="0" /></a>
+<a href="https://im.ge/i/1sJ1wy"><img src="https://i.im.ge/2022/09/20/1sJ1wy.a6.png" alt="a4" width="100%" border="0" /></a>
 
 
 ## Payment Page
@@ -61,7 +61,7 @@ _________________________________________________________________________
 
 ### Payment page using card number and valid cvv number.
 
-<a href="https://im.ge/i/1sJdXz"><img src="https://i.im.ge/2022/09/20/1sJdXz.a7.png" alt="a1" border="0" /></a>
+<a href="https://im.ge/i/1sJdXz"><img src="https://i.im.ge/2022/09/20/1sJdXz.a7.png" alt="a1" width="100%" border="0" /></a>
 
 
 
