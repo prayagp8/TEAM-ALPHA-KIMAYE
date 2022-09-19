@@ -49,7 +49,7 @@ _________________________________________________________________________
 ## Checkout Page
 _________________________________________________________________________
 
-<a href="https://im.ge/i/1sJrAx"><img src="https://i.im.ge/2022/09/20/1sJrAx.a4.png" alt="a1" width="100%" border="0" /></a>
+<a href="https://im.ge/i/1sJrAx"><img src="https://i.im.ge/2022/09/20/1sJrAx.a4.png" alt="a1" height="100%" border="0" /></a>
 
 ### Address page for online orders of users
 
@@ -61,7 +61,7 @@ _________________________________________________________________________
 
 ### Payment page using card number and valid cvv number.
 
-<a href="https://im.ge/i/1sJdXz"><img src="https://i.im.ge/2022/09/20/1sJdXz.a7.png" alt="a1" width="100%" border="0" /></a>
+<a href="https://im.ge/i/1sJdXz"><img src="https://i.im.ge/2022/09/20/1sJdXz.a7.png" alt="a1" height="100%" border="0" /></a>
 
 
 
