@@ -70,16 +70,23 @@ function logInFunction() {
 
     let emailLog = document.querySelector("#emailId").value;
     let passwordLog = document.querySelector("#passLog").value;
+
     sign_Data_Arr.forEach(function (el, i) {
         if (el.email == emailLog && el.password == passwordLog) {
-            alert("Login Successful\n" + "Welcome " + el.firstName)
             logOrNot = true;
             localStorage.setItem("loginStatus",JSON.stringify(logOrNot));
             localStorage.setItem("loggedIdDetails",JSON.stringify(el));
-            window.location.reload();
-        }else{
-            alert("login Failed")
+            // window.location.reload();
         }
+
     })
 
+    if(logOrNot){
+        let userDetails = JSON.parse(localStorage.getItem("loggedIdDetails"))
+        alert("Login Successful\n" + "Welcome " + userDetails.firstName)
+        
+        window.location.reload();
+    }else{
+        alert("login Failed")
+    }
 }
