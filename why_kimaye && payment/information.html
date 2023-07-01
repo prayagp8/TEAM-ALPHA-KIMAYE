@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information - Kimaye - Checkout</title>
+    <style>
+        body {
+            background-color: #ececec;
+        }
+
+        form {
+            margin: auto;
+            width: 600px;
+            box-sizing: border-box;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        form>img {
+            width: 45%;
+        }
+
+        form>div:nth-child(2) {
+            /* border: 1px solid blue; */
+            display: flex;
+            width: 48%;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #5b5a56;
+        }
+
+        form>div:nth-child(2)>p:nth-child(1),
+        form>div:nth-child(2)>p:nth-child(5) {
+            color: #d06284;
+        }
+
+        form>h3 {
+            font-weight: lighter;
+        }
+
+        form>h3:nth-child(3) {
+            margin: 0px 0px 20px 0px;
+        }
+
+        form>div:nth-child(4) {
+            width: 56%;
+            display: flex;
+            /* border: 1px solid green; */
+            justify-content: space-between;
+            align-items: center;
+            margin: 12px 0px;
+        }
+
+        form>div:nth-child(4)>div:first-child {
+            height: 40px;
+            width: 40px;
+            border-radius: 8px;
+            padding: 5px;
+            background-color: #d8d8d8;
+        }
+
+        form>div:nth-child(4)>div:last-child>p {
+            margin: 3px;
+            font-size: 15px;
+        }
+
+        form>div:nth-child(4)>div:last-child>p:last-child {
+            color: #d06284;
+        }
+
+        form>div:nth-child(4)>div>img {
+            width: 100%;
+        }
+
+        form>input:nth-child(5) {
+            margin-left: 5px;
+        }
+
+        form>label:nth-child(6) {
+            font-size: 14px;
+            color: #5b5a56;
+            margin: 0px 0px 0px 5px;
+        }
+
+        form>div:nth-child(8)>input,
+        form>div:nth-child(9)>input,
+        form>div:nth-child(10)>input,
+        form>div:nth-child(11)>input,
+        form>div:nth-child(12)>input,
+        form>div:nth-child(13)>input,
+        form>div:nth-child(14)>input,
+        form>div:nth-child(15)>input {
+            width: 90%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        form>div:nth-child(8),
+        form>div:nth-child(9),
+        form>div:nth-child(11),
+        form>div:nth-child(12),
+        form>div:nth-child(14) {
+            width: 100%;
+            display: flex;
+            background-color: white;
+            border: 1px solid #cccccc;
+            justify-content: space-around;
+            align-items: center;
+            height: 40px;
+            margin: 15px 0px;
+            border-radius: 5px;
+        }
+
+        form>div:nth-child(8)>p,
+        form>div:nth-child(9)>p {
+            color: #cccccc;
+            font-size: 20px;
+        }
+
+        form>div:nth-child(10) {
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        form>div:nth-child(10)>input {
+            width: 48%;
+            height: 40px;
+            box-sizing: border-box;
+            padding: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        form>div:nth-child(13) {
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        form>div:nth-child(13)>input {
+            width: 32%;
+            height: 40px;
+            box-sizing: border-box;
+            padding: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        form>div:nth-child(14)>p {
+            border: 1px solid gray;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            border-radius: 50%;
+            background-color: gray;
+            color: white;
+        }
+
+        form>div:nth-child(15)>input {
+            width: 40%;
+            height: 45px;
+            box-sizing: border-box;
+            padding: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: #437111;
+            color: #fff;
+        }
+
+        form>div:nth-child(15)>input:hover {
+            background-color: #2b490a;
+            cursor: pointer;
+        }
+
+        form>div:nth-child(15)>a {
+            text-decoration: none;
+            color: red;
+        }
+
+        form>div:nth-child(11)>input,
+        form>div:nth-child(12)>input {
+            width: 98%;
+        }
+
+        hr {
+            width: 600px;
+            margin: 100px auto 10px;
+        }
+
+        hr+div {
+            display: flex;
+            width: 600px;
+            /* border: 1px solid red; */
+            margin-inline: auto;
+        }
+
+        hr+div>a {
+            font-size: 14px;
+            margin: 0px 20px 25px 0px;
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo.png?19431" alt="error">
+        <div>
+            <p>Cart</p>
+            <p> › </p>
+            <p>Information</p>
+            <p> › </p>
+            <p>Shipping</p>
+            <p> › </p>
+            <p>Payment</p>
+        </div>
+        <h3>Contact information</h3>
+        <div>
+            <div><img src="https://cdn-icons-png.flaticon.com/128/3917/3917705.png" alt="error"></div>
+            <div>
+                <p>Saikat Patra (saikat360@gmail.com)</p>
+                <p>Log out</p>
+            </div>
+        </div>
+        <input type="checkbox">
+        <label>Get order notification and delivery updates</label>
+
+        <!-- Shipping address section -->
+
+        <h3>Shipping address</h3>
+        <div>
+            <input type="text" placeholder="Use a new address">
+            <p>| ▾</p>
+        </div>
+        <div>
+            <input type="text" placeholder="Country/region" required>
+            <p>| ▾</p>
+        </div>
+        <div>
+            <input type="text" placeholder="First name" id="FName" required>
+            <input type="text" placeholder="Last name" id="LName" required>
+        </div>
+        <div>
+            <input type="text" placeholder="Address" id="address" required>
+        </div>
+        <div>
+            <input type="text" placeholder="Apartment, suite, etc. (optional)">
+        </div>
+        <div>
+            <input type="text" placeholder="City" required>
+            <input type="text" placeholder="State" required>
+            <input type="text" placeholder="PIN code" required>
+        </div>
+        <div>
+            <input type="mobile-number" placeholder="Mobile number for order and delivery updates" required>
+            <p>?</p>
+        </div>
+        <div>
+            <input type="submit" value="Continue to shipping">
+            <a href="">Return to Cart</a>
+        </div>
+    </form>
+
+    <hr>
+    <div>
+        <a href="">Refund policy</a>
+        <a href="">Shipping policy</a>
+        <a href="">Privacy policy</a>
+        <a href="">Terms of services</a>
+    </div>
+</body>
+<script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit", getData);
+
+    function getData() {
+        event.preventDefault();
+        let userName = {
+            name:form.FName.value,
+            address:form.address.value
+        } 
+
+        localStorage.setItem("userName",JSON.stringify(userName))
+        window.location.href="shipping.html";
+    }
+</script>
+
+</html>
